@@ -57,18 +57,31 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Tables\Actions" />
+    <Folder Include="Tables\Tables MTM" />
+    <Folder Include="Fonctions" />
+    <Folder Include="Procedures" />
+    <Folder Include="Procedures\Organisateur" />
+    <Folder Include="Procedures\Utilisateur" />
+    <Folder Include="Procedures\Login" />
+    <Folder Include="Scripts" />
+    <Folder Include="Tables\Triggers" />
+    <Folder Include="Tables\Vues" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Adresse.sql" />
-    <Build Include="Tables\PlanningTheme.sql" />
     <Build Include="Tables\Organisateur.sql" />
     <Build Include="Tables\Planning.sql" />
     <Build Include="Tables\Theme.sql" />
     <Build Include="Tables\TypeTheme.sql" />
     <Build Include="Tables\Utilisateur.sql" />
-    <Build Include="Tables\ThemeTypeTheme.sql" />
+    <Build Include="Tables\Tables MTM\PlanningTheme.sql" />
+    <Build Include="Tables\Tables MTM\ThemeTypeTheme.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Tables\DB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
