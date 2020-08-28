@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB", "DB\DB.sqlproj", "{600387FD-449F-4678-B1FA-6EC2676C986F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{61A7A16B-DB65-4CDA-BBFA-F71F6360152F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{61A7A16B-DB65-4CDA-BBFA-F71F6360152F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{A52A1574-7444-4F3F-9BA1-F29973434718}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{61A7A16B-DB65-4CDA-BBFA-F71F6360152F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61A7A16B-DB65-4CDA-BBFA-F71F6360152F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A7A16B-DB65-4CDA-BBFA-F71F6360152F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52A1574-7444-4F3F-9BA1-F29973434718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52A1574-7444-4F3F-9BA1-F29973434718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52A1574-7444-4F3F-9BA1-F29973434718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52A1574-7444-4F3F-9BA1-F29973434718}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

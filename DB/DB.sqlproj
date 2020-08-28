@@ -65,8 +65,8 @@
     <Folder Include="Procedures\Utilisateur" />
     <Folder Include="Procedures\Login" />
     <Folder Include="Scripts" />
-    <Folder Include="Tables\Triggers" />
-    <Folder Include="Tables\Vues" />
+    <Folder Include="Triggers" />
+    <Folder Include="Vues" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Adresse.sql" />
@@ -77,6 +77,12 @@
     <Build Include="Tables\Utilisateur.sql" />
     <Build Include="Tables\Tables MTM\PlanningTheme.sql" />
     <Build Include="Tables\Tables MTM\ThemeTypeTheme.sql" />
+    <Build Include="Procedures\Utilisateur\Create_Utilisateur.sql" />
+    <Build Include="Procedures\Utilisateur\Update_Utilisateur.sql" />
+    <Build Include="Procedures\Utilisateur\Delete_Utilisateur.sql" />
+    <Build Include="Procedures\Organisateur\Create_Organisateur.sql" />
+    <Build Include="Procedures\Organisateur\Update_Organisateur.sql" />
+    <Build Include="Procedures\Organisateur\Delete_Organisateur.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Tables\DB.refactorlog" />
