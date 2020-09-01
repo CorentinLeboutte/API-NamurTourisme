@@ -1,5 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[Update_Organisateur]
-
+﻿CREATE PROCEDURE [dbo].[Update_Utilisateur]
 	@utilisateurID int,
 	@nom nvarchar(50),
 	@prenom nvarchar(50),

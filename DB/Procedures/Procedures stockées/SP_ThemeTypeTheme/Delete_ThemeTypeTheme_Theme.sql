@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[Create_Organisateur]
+﻿CREATE PROCEDURE [dbo].[Delete_ThemeTypeTheme_Theme]
 	@param1 int = 0,
 	@param2 int
 AS
