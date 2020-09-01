@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[ThemeTypeThee]
+﻿CREATE TABLE [dbo].[ThemeTypeTheme]
 (
 	[ThemeID] INT NOT NULL, 
     TypeThemeID INT NOT NULL,

@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[Delete_Organisateur]
-	@param1 int = 0,
-	@param2 int
+	@OrganisateurID int
 AS
-	SELECT @param1, @param2
-RETURN 0
+	
+	BEGIN
+		DELETE FROM Organisateur WHERE OrganisateurID = @OrganisateurID
+	END
