@@ -107,9 +107,8 @@
     <Build Include="Procedures\Procedures stockées\SP_ThemeTypeTheme\Delete_ThemeTypeTheme_Theme.sql" />
     <Build Include="Triggers\Trigger_DeleteUtilisateur.sql" />
     <Build Include="Triggers\Trigger_DeletePlanning.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="Tables\DB.refactorlog" />
+    <Build Include="Fonctions\PostSalt.sql" />
+    <Build Include="Fonctions\PreSalt.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
@@ -118,5 +117,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DB.publish.xml" />
   </ItemGroup>
 </Project>

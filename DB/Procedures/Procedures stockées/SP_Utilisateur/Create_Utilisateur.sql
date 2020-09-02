@@ -14,5 +14,6 @@ AS
 	BEGIN
 		INSERT INTO Utilisateur (Civilite, Nom, Prenom, AdresseId, DateNaiss, NumTelDomicile, NumTelPortable, NumFax, EMail,Mdp)
 			VALUES
-				(@civilite, @nom, @prenom, @adresseId, @dateNaiss, @numTelDomicile,@numTelPortable, @numFax, @eMail, @mdp)
+				(@civilite, @nom, @prenom, @adresseId, @dateNaiss, @numTelDomicile,@numTelPortable, @numFax, 
+				@eMail, HASHBYTES('SHA2_512',dbo.PreSalt()+@mdp+dbo.PostSalt()))
 	END

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Theme]
 (
-	[ThemeID] INT NOT NULL , 
+	[ThemeID] INT Identity NOT NULL , 
     [Nom] NVARCHAR(50) NOT NULL, 
     [Description] NVARCHAR(320) NOT NULL, 
     [HeureOuverture] DATETIME NOT NULL, 

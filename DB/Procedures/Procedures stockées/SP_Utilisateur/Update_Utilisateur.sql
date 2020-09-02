@@ -23,7 +23,7 @@ AS
 		NumTelPortable = @numTelPortable,
 		NumFax = @numFax,
 		EMail = @email,
-		Mdp = @mdp,
+		Mdp = HASHBYTES('SHA2_512',dbo.PreSalt()+@mdp+dbo.PostSalt()),
 		isAdmin = @isAdmin
 
 		WHERE UtilisateurID = @utilisateurID

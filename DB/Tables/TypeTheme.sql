@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TypeTheme]
 (
-	[TypeThemeID] INT NOT NULL , 
-    [Nom] NCHAR(10) NOT NULL, 
+	[TypeThemeID] INT Identity NOT NULL , 
+    [Nom] NVARCHAR(50) NOT NULL, 
     CONSTRAINT [PK_TypeTheme] PRIMARY KEY ([TypeThemeID])
 )

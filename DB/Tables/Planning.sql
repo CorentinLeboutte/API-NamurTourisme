@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Planning]
 (
-	[PlanningID] INT NOT NULL , 
+	[PlanningID] INT Identity NOT NULL , 
     [Date] DATETIME2 NOT NULL, 
     [HeureDebut] DATETIME NOT NULL, 
     [HeureFin] DATETIME NOT NULL,  

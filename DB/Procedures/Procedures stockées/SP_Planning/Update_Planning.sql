@@ -10,7 +10,7 @@ AS
 	
 	BEGIN
 		UPDATE Planning SET 
-		PlanningID = @planningID,
+		
 		[Date] = @date,
 		HeureDebut = @heureDebut,
 		HeureFin = @heureFin,
