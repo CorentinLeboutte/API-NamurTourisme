@@ -61,4 +61,9 @@ d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La 
 
 ('Musee Felicien Rops','Peintures, gravures, dessins et lettres de l''artiste belge du 19e siècle dans un ancien hôtel de maître.','10:00:00','18:00:00','https://www.museerops.be/',1);
 
+/*PLANNING*/
 
+INSERT INTO Planning([Date],HeureDebut,HeureFin,UtilisateurID,isActive)
+
+VALUES
+('2020-06-15','10:00:00','18:00:00',1,1)

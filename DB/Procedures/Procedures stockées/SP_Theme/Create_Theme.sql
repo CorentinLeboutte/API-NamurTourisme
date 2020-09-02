@@ -1,10 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[Create_Theme]
 	@nom nvarchar(50),
 	@description nvarchar(320),
-	@heureOuverture nvarchar(50),
-	@heureFermeture int,
-	@lienSiteWeb datetime2(7),
-	@adresseId nvarchar(50)
+	@heureOuverture datetime2(7),
+	@heureFermeture datetime2(7),
+	@lienSiteWeb nvarchar(320),
+	@adresseId int
 
 AS
 	BEGIN
