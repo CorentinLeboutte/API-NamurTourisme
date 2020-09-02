@@ -105,11 +105,18 @@
     <Build Include="Procedures\Procedures stockées\SP_ThemeTypeTheme\Delete_ThemeTypeTheme_TypeTheme.sql" />
     <Build Include="Procedures\Procedures stockées\SP_ThemeTypeTheme\Delete_ThemeTypeTheme_OneByOne.sql" />
     <Build Include="Procedures\Procedures stockées\SP_ThemeTypeTheme\Delete_ThemeTypeTheme_Theme.sql" />
+    <Build Include="Triggers\Trigger_DeleteUtilisateur.sql" />
+    <Build Include="Triggers\Trigger_DeletePlanning.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Tables\DB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
 </Project>

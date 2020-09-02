@@ -1,6 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[Create_ThemeTypeTheme]
-	@param1 int = 0,
-	@param2 int
+	@themeID int,
+	@typeThemeID int
 AS
-	SELECT @param1, @param2
-RETURN 0
+	BEGIN
+		INSERT INTO ThemeTypeTheme (themeID, TypeThemeID)
+			
+			VALUES
+				(@themeID, @typeThemeID)
+	END

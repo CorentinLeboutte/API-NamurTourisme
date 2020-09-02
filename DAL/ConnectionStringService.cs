@@ -6,9 +6,6 @@ namespace DAL
 {
     public class ConnectionStringService
     {
-        public string ConnString()
-        {
-
-        }
+   
     }
 }
