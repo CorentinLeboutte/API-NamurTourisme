@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DAL.Models
 {
-    class Planning
+    public class Planning
     {
 
         public int PlanningID { get; set; }

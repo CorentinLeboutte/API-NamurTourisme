@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DAL.Models
 {
-    class TypeTheme
+    public class TypeTheme
     {
         public int TypeThemeID { get; set; }
 

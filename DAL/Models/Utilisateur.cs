@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DAL.Models
 {
-    class Utilisateur
+    public class Utilisateur
     {
         public int UtilisateurID { get; set; }
 
