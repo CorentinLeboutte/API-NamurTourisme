@@ -20,12 +20,10 @@ namespace DAL.Repository.Repositories
         }
 
         /* CRUD : Create Read Update Delete */
-        // Méthode à générer : Read, create, update, delete
+        
 
-        public Utilisateur Get()
-        {
-            return new Utilisateur();
-        }
+
+        //CREATE
 
         public int Create(Utilisateur user)
         {
@@ -37,30 +35,55 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("numTelDomicile", user.NumTelDomicile);
             cmd.AddParameter("numTelPortable", user.NumTelPortable);
             cmd.AddParameter("numFax", user.NumFax);
+            cmd.AddParameter("eMail", user.EMail);
+            cmd.AddParameter("mdp", user.Mdp);
 
             
             return _connection.ExecuteNonQuery(cmd);
         }
+
+
+        //READ
+
         public IEnumerable<Utilisateur> GetAll()
         {
             Command cmd = new Command("Select * from Utilisateur");
             return _connection.ExecuteReader(cmd, reader => new Utilisateur()
             {
                 UtilisateurID = (int)reader["UtilisateurId"],
+                Civilite= reader["Civilite"].ToString(),
                 Nom = reader["Nom"].ToString(),
+                Prenom = reader["Prenom"].ToString(),
+                DateNaiss = (DateTime)reader["DateNaiss"],
+                NumTelDomicile = reader["NumTelDomicile"] is DBNull ? null : reader["NumTelDomicile"].ToString(),
+                NumTelPortable = reader["NumTelportable"].ToString(),
                 NumFax = reader["NumFax"] is DBNull ? null : reader["NumFax"].ToString(),
+                EMail = reader["EMail"].ToString(),
+                Mdp = reader["mdp"].ToString(),
             });
 
         }
 
-        public int Update(Utilisateur user)
+        //UPDATE
+
+        public void Update(Utilisateur user)
         {
+            Command cmd = new Command("Update_Utilisateur", true);
+            cmd.AddParameter("civilite", user.Civilite);
+            cmd.AddParameter("nom", user.Nom);
+            cmd.AddParameter("prenom", user.Prenom);
+            cmd.AddParameter("dateNaiss", user.DateNaiss);
+            cmd.AddParameter("numTelDomicile", user.NumTelDomicile);
+            cmd.AddParameter("numTelPortable", user.NumTelPortable);
+            cmd.AddParameter("numFax", user.NumFax);
+            cmd.AddParameter("eMail", user.EMail);
+            cmd.AddParameter("mdp", user.Mdp);
 
         }
 
-        public void Delete(int user)
-        {
+        //DELETE
 
-        }
+
+
     }
 }

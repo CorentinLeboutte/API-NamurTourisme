@@ -1,4 +1,5 @@
 ﻿using DAL.Models;
+using DAL.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +8,7 @@ using ToolBoxDB;
 
 namespace DAL.Repository.Repositories
 {
-    public class AdresseRepository
+    public class AdresseRepository : IAdresseRepository
     {
         private Connection _connection;
         public AdresseRepository(Connection connection)
@@ -15,13 +16,22 @@ namespace DAL.Repository.Repositories
             _connection = connection;
         }
 
-
         // CRUD 
 
         public List<Adresse> Get()
         {
-            return new List<Adresse>();
+            List<Adresse> GetAllAdresse = new List<Adresse>();
 
+            using(Connection _connection)
+            {
+                _connection.Open();
+            }
+
+        }
+
+        public Adresse Get(int idToGet)
+        {
+            return new Adresse();
         }
 
         public void Create(Adresse newAdresseToInsert)
