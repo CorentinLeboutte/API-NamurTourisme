@@ -17,6 +17,5 @@ namespace DAL.Models
 
         public int UtilisateurID { get; set; }
 
-
     }
 }
