@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ToolBoxDB;
 
 namespace API
 {
@@ -26,6 +29,11 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<DbProviderFactory>(sp => SqlClientFactory.Instance);
+            services.AddSingleton(sp => new ConnectionStringObj(@"Data Source=(localdb)\MSSQLLocalDB;
+                                Initial Catalog = NamurTourismeDB; 
+                                Integrated Security = True"));
+            services.AddSingleton<Connection>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
