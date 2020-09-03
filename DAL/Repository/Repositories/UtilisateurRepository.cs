@@ -6,6 +6,9 @@ using System.Text;
 using ToolBoxDB;
 
 namespace DAL.Repository.Repositories
+
+    /* Créer des méthodes qui vont faire le lien entre notre consommation et va aller
+     chercher les données et celles-ci vont nous retourner les données qui seront dans la consommation*/
 {
     public class UtilisateurRepository
     {
@@ -13,6 +16,15 @@ namespace DAL.Repository.Repositories
         public UtilisateurRepository(Connection connection)
         {
             _connection = connection;
+
+        }
+
+        /* CRUD : Create Read Update Delete */
+        // Méthode à générer : Read, create, update, delete
+
+        public Utilisateur Get()
+        {
+            return new Utilisateur();
         }
 
         public int Create(Utilisateur user)
@@ -21,6 +33,12 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("civilite", user.Civilite);
             cmd.AddParameter("nom", user.Nom);
             cmd.AddParameter("prenom", user.Prenom);
+            cmd.AddParameter("dateNaiss", user.DateNaiss);
+            cmd.AddParameter("numTelDomicile", user.NumTelDomicile);
+            cmd.AddParameter("numTelPortable", user.NumTelPortable);
+            cmd.AddParameter("numFax", user.NumFax);
+
+            
             return _connection.ExecuteNonQuery(cmd);
         }
         public IEnumerable<Utilisateur> GetAll()
@@ -32,6 +50,16 @@ namespace DAL.Repository.Repositories
                 Nom = reader["Nom"].ToString(),
                 NumFax = reader["NumFax"] is DBNull ? null : reader["NumFax"].ToString(),
             });
+
+        }
+
+        public int Update(Utilisateur user)
+        {
+
+        }
+
+        public void Delete(int user)
+        {
 
         }
     }
