@@ -20,18 +20,18 @@ namespace DAL.Repository.Repositories
 
         //CREATE
 
-        public int Create(Adresse user)
+        public int Create(Adresse adress)
         {
             Command cmd = new Command("Create_Adresse", true);
-            cmd.AddParameter("longitude", user.Longitude);
-            cmd.AddParameter("latitude", user.Latitude);
-            cmd.AddParameter("rue", user.Rue);
-            cmd.AddParameter("numero", user.Numero);
-            cmd.AddParameter("boite", user.Boite);
-            cmd.AddParameter("ville", user.Ville);
-            cmd.AddParameter("codePostal", user.CodePostal);
-            cmd.AddParameter("region", user.Region);
-            cmd.AddParameter("pays", user.Pays);
+            cmd.AddParameter("longitude", adress.Longitude);
+            cmd.AddParameter("latitude", adress.Latitude);
+            cmd.AddParameter("rue", adress.Rue);
+            cmd.AddParameter("numero", adress.Numero);
+            cmd.AddParameter("boite", adress.Boite);
+            cmd.AddParameter("ville", adress.Ville);
+            cmd.AddParameter("codePostal", adress.CodePostal);
+            cmd.AddParameter("region", adress.Region);
+            cmd.AddParameter("pays", adress.Pays);
 
 
             return _connection.ExecuteNonQuery(cmd);
@@ -62,18 +62,18 @@ namespace DAL.Repository.Repositories
 
         //UPDATE
 
-        public void Update(Adresse user)
+        public void Update(Adresse adress)
         {
             Command cmd = new Command("Update_Adresse", true);
-            cmd.AddParameter("longitude", user.Longitude);
-            cmd.AddParameter("latitude", user.Latitude);
-            cmd.AddParameter("rue", user.Rue);
-            cmd.AddParameter("numero", user.Numero);
-            cmd.AddParameter("boite", user.Boite);
-            cmd.AddParameter("ville", user.Ville);
-            cmd.AddParameter("codePostal", user.CodePostal);
-            cmd.AddParameter("region", user.Region);
-            cmd.AddParameter("pays", user.Pays);
+            cmd.AddParameter("longitude", adress.Longitude);
+            cmd.AddParameter("latitude", adress.Latitude);
+            cmd.AddParameter("rue", adress.Rue);
+            cmd.AddParameter("numero", adress.Numero);
+            cmd.AddParameter("boite", adress.Boite);
+            cmd.AddParameter("ville", adress.Ville);
+            cmd.AddParameter("codePostal", adress.CodePostal);
+            cmd.AddParameter("region", adress.Region);
+            cmd.AddParameter("pays", adress.Pays);
 
         }
 

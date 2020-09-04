@@ -17,10 +17,10 @@ namespace DAL.Repository.Repositories
 
         //CREATE
 
-        public int Create(TypeTheme user)
+        public int Create(TypeTheme typetheme)
         {
             Command cmd = new Command("Create_TypeTheme", true);
-            cmd.AddParameter("nom", user.Nom);
+            cmd.AddParameter("nom", typetheme.Nom);
    
             return _connection.ExecuteNonQuery(cmd);
         }
@@ -40,13 +40,15 @@ namespace DAL.Repository.Repositories
         }
 
         //UPDATE
-        public void Update(TypeTheme user)
+        public void Update(TypeTheme typetheme)
         {
             Command cmd = new Command("Update_Utilisateur", true);
-            cmd.AddParameter("nom", user.Nom);
+            cmd.AddParameter("nom", typetheme.Nom);
             
         }
 
+
+        //DELETE
 
 
 

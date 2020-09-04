@@ -19,9 +19,6 @@ namespace DAL.Repository.Repositories
 
         }
 
-        /* CRUD : Create Read Update Delete */
-        
-
 
         //CREATE
 

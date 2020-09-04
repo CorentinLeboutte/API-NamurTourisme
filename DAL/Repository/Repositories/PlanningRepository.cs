@@ -17,12 +17,12 @@ namespace DAL.Repository.Repositories
 
         //CREATE
 
-        public int Create(Planning user)
+        public int Create(Planning plan)
         {
             Command cmd = new Command("Create_Planning", true);
-            cmd.AddParameter("date", user.Date);
-            cmd.AddParameter("heureDebut", user.HeureDebut);
-            cmd.AddParameter("heureFin", user.HeureFin);
+            cmd.AddParameter("date", plan.Date);
+            cmd.AddParameter("heureDebut", plan.HeureDebut);
+            cmd.AddParameter("heureFin", plan.HeureFin);
 
             return _connection.ExecuteNonQuery(cmd);
         }
@@ -44,12 +44,12 @@ namespace DAL.Repository.Repositories
 
         //UPDATE
 
-        public void Update(Planning user)
+        public void Update(Planning plan)
         {
             Command cmd = new Command("Update_Planning", true);
-            cmd.AddParameter("date", user.Date);
-            cmd.AddParameter("heureDebut", user.HeureDebut);
-            cmd.AddParameter("heureFin", user.HeureFin);
+            cmd.AddParameter("date", plan.Date);
+            cmd.AddParameter("heureDebut", plan.HeureDebut);
+            cmd.AddParameter("heureFin", plan.HeureFin);
          
 
         }

@@ -18,14 +18,14 @@ namespace DAL.Repository.Repositories
         //CREATE
 
 
-        public int Create(Theme user)
+        public int Create(Theme theme)
         {
             Command cmd = new Command("Create_Theme", true);
-            cmd.AddParameter("nom", user.Nom);
-            cmd.AddParameter("description", user.Description);
-            cmd.AddParameter("heureOuverture", user.HeureOuverture);
-            cmd.AddParameter("heureFermeture", user.HeureFermeture);
-            cmd.AddParameter("lienSiteWeb", user.LienSiteWeb);
+            cmd.AddParameter("nom", theme.Nom);
+            cmd.AddParameter("description", theme.Description);
+            cmd.AddParameter("heureOuverture", theme.HeureOuverture);
+            cmd.AddParameter("heureFermeture", theme.HeureFermeture);
+            cmd.AddParameter("lienSiteWeb", theme.LienSiteWeb);
 
             return _connection.ExecuteNonQuery(cmd);
         }
@@ -49,14 +49,14 @@ namespace DAL.Repository.Repositories
 
         //UPDATE
 
-        public void Update(Theme user)
+        public void Update(Theme theme)
         {
             Command cmd = new Command("Update_Theme", true);
-            cmd.AddParameter("nom", user.Nom);
-            cmd.AddParameter("description", user.Description);
-            cmd.AddParameter("heureOuverture", user.HeureOuverture);
-            cmd.AddParameter("heureFermeture", user.HeureFermeture);
-            cmd.AddParameter("lienSiteWeb", user.LienSiteWeb);
+            cmd.AddParameter("nom", theme.Nom);
+            cmd.AddParameter("description", theme.Description);
+            cmd.AddParameter("heureOuverture", theme.HeureOuverture);
+            cmd.AddParameter("heureFermeture", theme.HeureFermeture);
+            cmd.AddParameter("lienSiteWeb", theme.LienSiteWeb);
 
         }
 
