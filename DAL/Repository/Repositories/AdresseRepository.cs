@@ -52,7 +52,7 @@ namespace DAL.Repository.Repositories
                 Boite = reader["Boite"] is DBNull ? null : reader["Boite"].ToString(),
                 Ville = reader["Ville"] is DBNull ? null : reader["Ville"].ToString(),
 
-              //  CodePostal = (int)reader["CodePostal"],is DBNull ? null : (int)reader["CodePostal"],
+                //CodePostal = reader["CodePostal"],is DBNull ? null : reader["CodePostal"],
 
                 Region = reader["Region"] is DBNull ? null : reader["Region"].ToString(),
                 Pays = reader["Pays"] is DBNull ? null : reader["Pays"].ToString(),
