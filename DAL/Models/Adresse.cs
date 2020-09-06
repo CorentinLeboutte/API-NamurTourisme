@@ -18,7 +18,7 @@ namespace DAL.Models
 
         public string Boite { get; set; }
 
-        public int CodePostal { get; set; }
+        public int? CodePostal { get; set; }
 
         public string Ville { get; set; }
 

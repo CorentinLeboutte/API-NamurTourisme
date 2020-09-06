@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using DAL.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,7 @@ namespace API
                                 Initial Catalog = NamurTourismeDB; 
                                 Integrated Security = True"));
             services.AddSingleton<Connection>();
+            services.AddSingleton<AdresseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

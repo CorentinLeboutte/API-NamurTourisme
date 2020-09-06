@@ -5,10 +5,10 @@ namespace DAL.Repository.IRepository
 {
     public interface IAdresseRepository
     {
-        void Create(Adresse newAdresseToInsert);
-        void Delete(int idToDelete);
-        List<Adresse> Get();
-        Adresse Get(int idToGet);
-        void Update(Adresse AdressetoUpdate);
+        int Create(Adresse Adresse);
+        void Delete(int Id);
+        IEnumerable<Adresse> Get();
+        Adresse GetById(int Id);
+        int Update(Adresse Adresse);
     }
 }
