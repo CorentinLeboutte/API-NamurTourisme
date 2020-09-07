@@ -1,9 +1,12 @@
 ﻿using DAL.Models;
+using DAL.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using ToolBoxDB;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace DAL.Repository.Repositories
 {
@@ -24,10 +27,33 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("heureDebut", plan.HeureDebut);
             cmd.AddParameter("heureFin", plan.HeureFin);
 
-            return _connection.ExecuteNonQuery(cmd);
+            int Success = 0;
+            try
+            {
+                _connection.ExecuteNonQuery(cmd);
+            }
+            catch(SqlException ex)
+            {
+                if (ex.Message.Contains(""))
+                    return Success = 1;
+            }
+
+            return Success;
         }
 
-        //READ
+
+        //DELETE
+
+
+        public void Delete(int Id)
+        {
+            Command cmd = new Command("Delete_Utilisateur", true);
+            cmd.AddParameter("utilisateurID", Id);
+            _connection.ExecuteNonQuery(cmd);
+        }
+
+
+        //GET
 
         public IEnumerable<Planning> GetAll()
         {
@@ -39,26 +65,47 @@ namespace DAL.Repository.Repositories
                 HeureDebut = (DateTime)reader["heureDebut"],
                 HeureFin = (DateTime)reader["heureFin"],
             });
+        }
 
+
+        //GETBYID
+
+        public Planning GetById(int Id)
+        {
+            Command cmd = new Command("Select * from Planning WHERE PlanningID = @Id");
+            cmd.AddParameter("Id", Id);
+
+            return _connection.ExecuteReader(cmd, reader => new Planning()
+            {
+                PlanningID = (int)reader["planningId"],
+                Date = (DateTime)reader["date"],
+                HeureDebut = (DateTime)reader["heureDebut"],
+                HeureFin = (DateTime)reader["heureFin"],
+
+            }).SingleOrDefault();
         }
 
         //UPDATE
 
-        public void Update(Planning plan)
+        public int Update(Planning plan)
         {
             Command cmd = new Command("Update_Planning", true);
             cmd.AddParameter("date", plan.Date);
             cmd.AddParameter("heureDebut", plan.HeureDebut);
             cmd.AddParameter("heureFin", plan.HeureFin);
+            int success = 0;
+            try
+            {
+                _connection.ExecuteNonQuery(cmd);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains(""))
+                    return success = 1;
+            }
 
+            return success;
 
         }
-
-        //DELETE
-
-
-
-
-
     }
 }

@@ -7,6 +7,7 @@ namespace DAL.Repository.Repositories
     {
         int Create(Planning plan);
         IEnumerable<Planning> GetAll();
-        void Update(Planning plan);
+        Planning GetById(int Id);
+        int Update(Planning plan);
     }
 }

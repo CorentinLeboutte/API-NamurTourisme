@@ -59,6 +59,10 @@ namespace DAL.Repository.Repositories
             _connection.ExecuteNonQuery(cmd);
         }
 
+
+        //GET
+
+
         public IEnumerable<Adresse> Get()
         {
             Command cmd = new Command("Select * from Adresse");
@@ -77,7 +81,7 @@ namespace DAL.Repository.Repositories
             });
         }
 
-        //GET
+        //GETBYID
 
         public Adresse GetById(int Id)
         {
