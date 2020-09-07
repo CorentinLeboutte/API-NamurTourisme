@@ -55,7 +55,7 @@ namespace DAL.Repository.Repositories
 
         //GET
 
-        public IEnumerable<Planning> GetAll()
+        public IEnumerable<Planning> Get()
         {
             Command cmd = new Command("Select * from Planning");
             return _connection.ExecuteReader(cmd, reader => new Planning()

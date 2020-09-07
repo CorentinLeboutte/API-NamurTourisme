@@ -61,7 +61,7 @@ namespace DAL.Repository.Repositories
 
         //GET
 
-        public IEnumerable<Utilisateur> GetAll()
+        public IEnumerable<Utilisateur> Get()
         {
             Command cmd = new Command("Select * from Utilisateur");
             return _connection.ExecuteReader(cmd, reader => new Utilisateur()

@@ -7,6 +7,6 @@ namespace DAL.Repository.Repositories
     {
         int Create(Utilisateur user);
         IEnumerable<Utilisateur> GetAll();
-        void Update(Utilisateur user);
+        int Update(Utilisateur user);
     }
 }

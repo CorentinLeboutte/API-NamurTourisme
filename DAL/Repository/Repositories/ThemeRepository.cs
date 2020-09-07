@@ -56,7 +56,7 @@ namespace DAL.Repository.Repositories
 
         //GET
 
-        public IEnumerable<Theme> GetAll()
+        public IEnumerable<Theme> Get()
         {
             Command cmd = new Command("Select * from Theme");
             return _connection.ExecuteReader(cmd, reader => new Theme()
