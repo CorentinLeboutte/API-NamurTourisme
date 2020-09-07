@@ -7,6 +7,6 @@ namespace DAL.Repository.Repositories
     {
         int Create(Theme theme);
         IEnumerable<Theme> GetAll();
-        void Update(Theme theme);
+        int Update(Theme theme);
     }
 }

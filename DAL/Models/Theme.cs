@@ -12,9 +12,9 @@ namespace DAL.Models
 
         public string Description { get; set; }
 
-        public DateTime HeureOuverture { get; set; }
+        public DateTime? HeureOuverture { get; set; }
 
-        public DateTime HeureFermeture { get; set; }
+        public DateTime? HeureFermeture { get; set; }
 
         public string LienSiteWeb { get; set; }
 
