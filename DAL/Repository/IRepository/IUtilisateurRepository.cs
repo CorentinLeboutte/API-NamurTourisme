@@ -6,7 +6,7 @@ namespace DAL.Repository.Repositories
     public interface IUtilisateurRepository
     {
         int Create(Utilisateur user);
-        IEnumerable<Utilisateur> GetAll();
+        IEnumerable<Utilisateur> Get();
         int Update(Utilisateur user);
     }
 }
