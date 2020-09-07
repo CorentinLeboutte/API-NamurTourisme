@@ -7,7 +7,7 @@ using ToolBoxDB;
 
 namespace DAL.Repository.Repositories
 {
-    public class ThemeRepository
+    public class ThemeRepository : IThemeRepository
     {
         private Connection _connection;
         public ThemeRepository(Connection connection)
@@ -40,8 +40,8 @@ namespace DAL.Repository.Repositories
                 ThemeID = (int)reader["UtilisateurId"],
                 Nom = reader["nom"].ToString(),
                 Description = reader["description"].ToString(),
-               // HeureOuverture = (DateTime)reader["DateNaiss"] is DBNull ? null : (DateTime)reader["heureOuverture"],
-               // HeureFermeture = (DateTime)reader["DateNaiss"] is DBNull ? null : (DateTime)reader["heureOuverture"],
+                // HeureOuverture = (DateTime)reader["DateNaiss"] is DBNull ? null : (DateTime)reader["heureOuverture"],
+                // HeureFermeture = (DateTime)reader["DateNaiss"] is DBNull ? null : (DateTime)reader["heureOuverture"],
                 LienSiteWeb = reader["lienSiteWeb"] is DBNull ? null : reader["lienSiteWeb"].ToString(),
             });
 

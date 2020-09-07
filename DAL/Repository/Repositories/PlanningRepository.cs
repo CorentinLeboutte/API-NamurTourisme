@@ -7,7 +7,7 @@ using ToolBoxDB;
 
 namespace DAL.Repository.Repositories
 {
-    public class PlanningRepository
+    public class PlanningRepository : IPlanningRepository
     {
         private Connection _connection;
         public PlanningRepository(Connection connection)
@@ -50,13 +50,13 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("date", plan.Date);
             cmd.AddParameter("heureDebut", plan.HeureDebut);
             cmd.AddParameter("heureFin", plan.HeureFin);
-         
+
 
         }
 
         //DELETE
 
-       
+
 
 
 

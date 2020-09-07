@@ -48,6 +48,10 @@ namespace DAL.Repository.Repositories
             return Success;
         }
 
+
+        //DELETE 
+
+
         public void Delete(int Id)
         {
             Command cmd = new Command("Delete_Adresse", true);
@@ -73,6 +77,8 @@ namespace DAL.Repository.Repositories
             });
         }
 
+        //GET
+
         public Adresse GetById(int Id)
         {
             Command cmd = new Command("Select * from Adresse WHERE AdresseID = @Id");
@@ -92,9 +98,6 @@ namespace DAL.Repository.Repositories
                 Pays = reader["Pays"] is DBNull ? null : reader["Pays"].ToString(),
             }).SingleOrDefault();
         }
-
-        //READ
-
 
         //UPDATE
 
@@ -126,9 +129,6 @@ namespace DAL.Repository.Repositories
 
 
         }
-
-
-        //DELETE
 
 
     }

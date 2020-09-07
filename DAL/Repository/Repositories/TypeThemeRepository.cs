@@ -7,7 +7,7 @@ using ToolBoxDB;
 
 namespace DAL.Repository.Repositories
 {
-    public class TypeThemeRepository
+    public class TypeThemeRepository : ITypeThemeRepository
     {
         private Connection _connection;
         public TypeThemeRepository(Connection connection)
@@ -21,7 +21,7 @@ namespace DAL.Repository.Repositories
         {
             Command cmd = new Command("Create_TypeTheme", true);
             cmd.AddParameter("nom", typetheme.Nom);
-   
+
             return _connection.ExecuteNonQuery(cmd);
         }
 
@@ -34,7 +34,7 @@ namespace DAL.Repository.Repositories
             {
                 TypeThemeID = (int)reader["TypeThemeId"],
                 Nom = reader["Nom"].ToString(),
-                
+
             });
 
         }
@@ -44,7 +44,7 @@ namespace DAL.Repository.Repositories
         {
             Command cmd = new Command("Update_Utilisateur", true);
             cmd.AddParameter("nom", typetheme.Nom);
-            
+
         }
 
 
