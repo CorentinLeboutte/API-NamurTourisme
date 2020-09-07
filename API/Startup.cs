@@ -32,8 +32,8 @@ namespace API
             services.AddControllers();
             services.AddSingleton<DbProviderFactory>(sp => SqlClientFactory.Instance);
             services.AddSingleton(sp => new ConnectionStringObj(@"Data Source=(localdb)\MSSQLLocalDB;
-                                Initial Catalog = NamurTourismeDB; 
-                                Integrated Security = True"));
+                                                                Initial Catalog = NamurTourismeDB; 
+                                                                Integrated Security = True"));
             services.AddSingleton<Connection>();
             services.AddSingleton<AdresseRepository>();
         }

@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
 using ToolBoxDB;
 
@@ -21,13 +23,34 @@ namespace DAL.Repository.Repositories
         {
             Command cmd = new Command("Create_TypeTheme", true);
             cmd.AddParameter("nom", typetheme.Nom);
+            int Success = 0;
+            try
+            {
+                _connection.ExecuteNonQuery(cmd);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains(""))
+                    return Success = 1;
+            }
+            return Success;
 
-            return _connection.ExecuteNonQuery(cmd);
+            }
+
+        //DELETE
+
+        public void Delete(int Id)
+        {
+            Command cmd = new Command("Delete_TypeTheme", true);
+            cmd.AddParameter("typeThemeID", Id);
+            _connection.ExecuteNonQuery(cmd);
         }
 
-        //READ
 
-        public IEnumerable<TypeTheme> GetAll()
+
+        //GET
+
+        public IEnumerable<TypeTheme> Get()
         {
             Command cmd = new Command("Select * from TypeTheme");
             return _connection.ExecuteReader(cmd, reader => new TypeTheme()
@@ -39,18 +62,39 @@ namespace DAL.Repository.Repositories
 
         }
 
+        //GETBYID
+
+        public TypeTheme GetById(int Id)
+        {
+            Command cmd = new Command("Select * from TypeThee WHERE TypeThemeID = @Id");
+            cmd.AddParameter("Id", Id);
+
+            return _connection.ExecuteReader(cmd, reader => new TypeTheme()
+            {
+                TypeThemeID = (int)reader["TypeThemeId"],
+                Nom = reader["Nom"].ToString(),
+            }).SingleOrDefault();
+        }
+
         //UPDATE
-        public void Update(TypeTheme typetheme)
+        public int Update(TypeTheme typetheme)
         {
             Command cmd = new Command("Update_Utilisateur", true);
             cmd.AddParameter("nom", typetheme.Nom);
+            int success = 0;
+            try
+            {
+                _connection.ExecuteNonQuery(cmd);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains(""))
+                    return success = 1;
+            }
+
+            return success;
 
         }
-
-
-        //DELETE
-
-
 
     }
 }

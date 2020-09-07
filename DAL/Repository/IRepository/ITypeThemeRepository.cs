@@ -6,7 +6,7 @@ namespace DAL.Repository.Repositories
     public interface ITypeThemeRepository
     {
         int Create(TypeTheme typetheme);
-        IEnumerable<TypeTheme> GetAll();
-        void Update(TypeTheme typetheme);
+        IEnumerable<TypeTheme> Get();
+        int Update(TypeTheme typetheme);
     }
 }
