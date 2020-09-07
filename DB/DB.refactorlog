@@ -105,4 +105,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="AdresseId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="b24ae35e-e368-4f14-9938-c41aef61128d" ChangeDateTime="09/07/2020 08:05:35">
+    <Property Name="ElementName" Value="[dbo].[Trigger_TypeTheme]" />
+    <Property Name="ElementType" Value="SqlDmlTrigger" />
+    <Property Name="ParentElementName" Value="[dbo].[TypeTheme]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[Trigger_ypeTheme]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cb92692f-972c-4c1a-a8b4-9cf04d8c42b7" ChangeDateTime="09/07/2020 08:06:17">
+    <Property Name="ElementName" Value="[dbo].[Trigger_ypeTheme]" />
+    <Property Name="ElementType" Value="SqlDmlTrigger" />
+    <Property Name="ParentElementName" Value="[dbo].[TypeTheme]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[Trigger_DeleteTypeTheme]" />
+  </Operation>
 </Operations>

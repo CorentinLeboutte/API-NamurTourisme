@@ -20,7 +20,7 @@ namespace API.Controllers
             _adRepo = adRepo;
         }
 
-
+        //CREATE
 
         [Route("Create")]
         public IActionResult Create([FromBody] Adresse adresse)
@@ -33,6 +33,8 @@ namespace API.Controllers
         }
 
 
+        //UPDATE
+
         [Route("Update")]
         public IActionResult Update([FromBody] Adresse adresse)
         {
@@ -43,12 +45,16 @@ namespace API.Controllers
                 return NotFound();
         }
 
+        //DELETE
+
         [Route("Delete/{Id}")]
         public IActionResult Delete(/*[FromRoute]*/ int Id)
         {
             _adRepo.Delete(Id);
             return Ok();
         }
+
+        //GET
 
         [Route("Get")]
         public IActionResult Get()

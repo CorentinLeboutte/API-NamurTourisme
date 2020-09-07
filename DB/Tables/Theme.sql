@@ -7,6 +7,7 @@
     [HeureFermeture] DATETIME2 NULL, 
     [LienSiteWeb] NVARCHAR (320) NULL, 
     [AdresseID] INT NOT NULL, 
+    [isActive] BIT default 1  NOT NULL, 
     CONSTRAINT [PK_Theme] PRIMARY KEY ([ThemeID]),
     CONSTRAINT [FK_Theme_ToAdresse] FOREIGN KEY ([AdresseID]) REFERENCES [Adresse]([AdresseID]), 
 )

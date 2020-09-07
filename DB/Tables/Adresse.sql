@@ -10,5 +10,6 @@
     [Ville] NVARCHAR(50) NULL, 
     [Region] NVARCHAR(50) NULL, 
     [Pays] NVARCHAR(50) NULL, 
+    [isActive] BIT default 1  NOT NULL, 
     CONSTRAINT [PK_Adresse] PRIMARY KEY ([AdresseID]) 
 )

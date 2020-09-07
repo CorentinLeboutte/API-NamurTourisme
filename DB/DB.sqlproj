@@ -109,6 +109,9 @@
     <Build Include="Triggers\Trigger_DeletePlanning.sql" />
     <Build Include="Fonctions\PostSalt.sql" />
     <Build Include="Fonctions\PreSalt.sql" />
+    <Build Include="Triggers\Trigger_DeleteTypeTheme.sql" />
+    <Build Include="Triggers\Trigger_DeleteTheme.sql" />
+    <Build Include="Triggers\Trigger_DeleteAdresse.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
@@ -120,5 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DB.refactorlog" />
   </ItemGroup>
 </Project>
