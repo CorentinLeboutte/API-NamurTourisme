@@ -56,7 +56,8 @@ namespace API.Controllers
 
         //GET
 
-        [Route("Get")]
+        [HttpGet]
+        //[Route("Get")]
         public IActionResult Get()
         {
             IEnumerable<Utilisateur> list = _utRepo.Get();

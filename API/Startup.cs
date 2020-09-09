@@ -36,6 +36,11 @@ namespace API
                                                                 Integrated Security = True"));
             services.AddSingleton<Connection>();
             services.AddSingleton<AdresseRepository>();
+            services.AddSingleton<PlanningRepository>();
+            services.AddSingleton<ThemeRepository>();
+            services.AddSingleton<TypeThemeRepository>();
+            services.AddSingleton<UtilisateurRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
