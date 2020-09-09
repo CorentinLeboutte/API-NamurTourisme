@@ -55,13 +55,16 @@ namespace API.Controllers
 
         //GET
 
-        [Route("Get")]
+        [HttpGet]
+        //[Route("Get")]
         public IActionResult Get()
         {
             IEnumerable<Planning> list = _planRepo.Get();
             return Ok(list);
         }
 
+
+        //[HttpGet]
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {

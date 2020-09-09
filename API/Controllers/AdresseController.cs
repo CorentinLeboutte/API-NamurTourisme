@@ -62,7 +62,8 @@ namespace API.Controllers
             IEnumerable<Adresse> list = _adRepo.Get();
             return Ok(list);
         }
-        [HttpGet]
+        //[HttpGet]
+        
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {

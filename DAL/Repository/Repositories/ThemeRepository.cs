@@ -80,7 +80,7 @@ namespace DAL.Repository.Repositories
 
             return _connection.ExecuteReader(cmd, reader => new Theme()
             {
-                ThemeID = (int)reader["UtilisateurId"],
+                ThemeID = (int)reader["themeId"],
                 Nom = reader["nom"].ToString(),
                 Description = reader["description"].ToString(),
                 HeureOuverture = reader["DateNaiss"] is DBNull ? null : (DateTime?)reader["heureOuverture"],

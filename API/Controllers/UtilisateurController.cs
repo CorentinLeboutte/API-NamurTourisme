@@ -64,6 +64,8 @@ namespace API.Controllers
             return Ok(list);
         }
 
+
+        //[HttpGet]
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {

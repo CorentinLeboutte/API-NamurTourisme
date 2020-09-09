@@ -17,7 +17,11 @@ VALUES
 
 ('blabla','blabla','Rue machin','85',NULL,'Namur',5000,NULL, 'Belgique'),
 
+('50°N','4°E','Rue Charles Simon','26',NULL,'Namur',5004,NULL,'Belgique'),
+
 ('blabla','blabla','Rue hello','74',NULL,'Charleroi',6000,NULL, 'Belgique');
+
+
 
 /* AJOUT UTILISATEUR */
 
@@ -28,6 +32,8 @@ VALUES
 ('Mademoiselle','Ruais','Adélaïde','1983-10-24',NULL,'0496 68 26 84',NULL,'AdelaideRuais@rhyta.com', HASHBYTES('SHA2_512', dbo.PreSalt()+'test1234'+dbo.PostSalt()),DEFAULT,DEFAULT,1),
 
 ('Monsieur','Blanc','Percy','1977-06-27',NULL,'0498 72 78 86',NULL,'PercyBlanc@armyspy.com',HASHBYTES('SHA2_512', dbo.PreSalt()+'test1234'+dbo.PreSalt()),DEFAULT,DEFAULT,2),
+
+('Monsieur','Ménard','Pascal','1991-01-24','071 24 51 65','0475 51 48 79','071 24 51 66','jc.vandamme@biceps.com',HASHBYTES('SHA2_512', dbo.PreSalt()+'test1234'+dbo.PreSalt()),DEFAULT,DEFAULT,3),
 
 ('Mademoiselle','Labrecque','Ancelina','1957-07-20',NULL,'0477 78 23 20',NULL,'AncelinaCaouette@dayrep.com',HASHBYTES('SHA2_512', dbo.PreSalt()+'test1234'+dbo.PreSalt()),DEFAULT,DEFAULT,1);
 
@@ -66,4 +72,14 @@ d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La 
 INSERT INTO Planning([Date],HeureDebut,HeureFin,UtilisateurID,isActive)
 
 VALUES
-('2020-06-15','10:00:00','18:00:00',1,1)
+('2020-06-15','10:00:00','18:00:00',1,1),
+('2020-06-15','09:00:00','19:00:00',1,1),
+('2020-06-16','10:00:00','15:00:00',1,1),
+('2020-06-17','10:00:00','18:00:00',1,1),
+('2020-06-17','08:00:00','17:00:00',1,1),
+('2020-06-17','08:00:00','19:00:00',1,1),
+('2020-06-18','08:00:00','18:00:00',1,1),
+('2020-06-19','10:00:00','19:00:00',1,1),
+('2020-06-19','09:00:00','19:00:00',1,1)
+
+
