@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[Create_Avis]
-	@utilisateurId int,
-	@themeId int,
+	@utilisateurID int,
+	@themeID int,
 	@note int,
 	@commentaire nvarchar(320),
 	@dateCommentaire datetime,

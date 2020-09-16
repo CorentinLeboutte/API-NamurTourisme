@@ -116,6 +116,8 @@
     <Build Include="Tables\Tables MTM\Avis.sql" />
     <Build Include="Procedures\Procedures stockées\SP_Avis\Create_Avis.sql" />
     <Build Include="Procedures\Procedures stockées\SP_Avis\Delete_Avis.sql" />
+    <Build Include="Procedures\Procedures stockées\SP_Avis\Update_Avis.sql" />
+    <Build Include="Triggers\Trigger_DeleteAvis.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
