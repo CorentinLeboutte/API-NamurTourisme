@@ -73,6 +73,7 @@
     <Folder Include="Procedures\Procedures stockées\SP_Utilisateur" />
     <Folder Include="Procedures\Procedures stockées\SP_PlanningTheme" />
     <Folder Include="Procedures\Procedures stockées\SP_ThemeTypeTheme" />
+    <Folder Include="Procedures\Procedures stockées\SP_Avis" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Adresse.sql" />
@@ -112,6 +113,8 @@
     <Build Include="Triggers\Trigger_DeleteTypeTheme.sql" />
     <Build Include="Triggers\Trigger_DeleteTheme.sql" />
     <Build Include="Triggers\Trigger_DeleteAdresse.sql" />
+    <Build Include="Tables\Tables MTM\Avis.sql" />
+    <Build Include="Procedures\Procedures stockées\SP_Avis\Create_Avis.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />

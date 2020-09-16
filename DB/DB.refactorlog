@@ -119,4 +119,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[Trigger_DeleteTypeTheme]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="654fc5f7-2da5-4652-87de-593a771c7360" ChangeDateTime="09/16/2020 08:24:12">
+    <Property Name="ElementName" Value="[dbo].[Avis].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Avis]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AvisID" />
+  </Operation>
 </Operations>
