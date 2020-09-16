@@ -115,6 +115,7 @@
     <Build Include="Triggers\Trigger_DeleteAdresse.sql" />
     <Build Include="Tables\Tables MTM\Avis.sql" />
     <Build Include="Procedures\Procedures stockées\SP_Avis\Create_Avis.sql" />
+    <Build Include="Procedures\Procedures stockées\SP_Avis\Delete_Avis.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
