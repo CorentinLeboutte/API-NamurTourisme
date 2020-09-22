@@ -3,7 +3,7 @@
 	@typeThemeID int
 AS
 	BEGIN
-		INSERT INTO ThemeTypeTheme (themeID, TypeThemeID)
+		INSERT INTO ThemeTypeTheme (ThemeID, TypeThemeID)
 			
 			VALUES
 				(@themeID, @typeThemeID)

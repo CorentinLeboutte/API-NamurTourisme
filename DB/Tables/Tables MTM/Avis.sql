@@ -4,8 +4,8 @@
     [UtilisateurID] INT NOT NULL, 
     [ThemeID] INT NOT NULL, 
     [Note] INT NULL, 
-    [Commentaire] NVARCHAR(320) NOT NULL, 
-    [DateCommentaire] DATETIME2 NOT NULL, 
+    [Commentaire] NVARCHAR(320) NULL, 
+    [DateCommentaire] DATETIME2 NULL, 
     [isActive] BIT NOT NULL DEFAULT 1, 
 
     CONSTRAINT [PK_AvisID] PRIMARY KEY (AvisID,[UtilisateurID], ThemeID),

@@ -62,9 +62,9 @@ namespace DAL.Repository.Repositories
             return _connection.ExecuteReader(cmd, reader => new Avis()
             {
                 AvisID = (int)reader["AvisId"],
-                Note = (int)reader["Note"],
-                Commentaire = reader["Commentaire"].ToString(),
-                DateCommentaire = (DateTime)reader["DateCommentaire"],
+                Note = reader["Note"] is DBNull ? null : (int?)reader["Note"],
+                Commentaire = reader["Commentaire"] is DBNull ? null : reader["Commentaire"].ToString(),
+                DateCommentaire = (DateTime?)reader["DateCommentaire"],
             });
 
         }

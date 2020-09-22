@@ -22,7 +22,7 @@ namespace API.Controllers
 
         //CREATE
 
-        [Route("Create")]
+        [HttpPost]
         public IActionResult Create([FromBody] Adresse adresse)
         {
             int success = _adRepo.Create(adresse);
@@ -35,7 +35,7 @@ namespace API.Controllers
 
         //UPDATE
 
-        [Route("Update")]
+        [HttpPut]
         public IActionResult Update([FromBody] Adresse adresse)
         {
             int success = _adRepo.Update(adresse);
@@ -47,8 +47,8 @@ namespace API.Controllers
 
         //DELETE
 
-        [Route("Delete/{Id}")]
-        public IActionResult Delete(/*[FromRoute]*/ int Id)
+        [HttpDelete("{Id}")]
+        public IActionResult Delete( int Id)
         {
             _adRepo.Delete(Id);
             return Ok();
@@ -68,8 +68,8 @@ namespace API.Controllers
 
         //[HttpGet]
         
-        [Route("GetById/{Id}")]
-        public IActionResult GetById(/*[FromRoute]*/ int Id)
+        [HttpGet("{Id}")]
+        public IActionResult GetById( int Id)
         {
             Adresse ad = new Adresse();
             ad = _adRepo.GetById(Id);

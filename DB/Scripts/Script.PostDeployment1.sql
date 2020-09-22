@@ -84,12 +84,12 @@ VALUES
 
 /*AVIS*/
 
-INSERT INTO Avis(UtilisateurID,ThemeID,Commentaire,DateCommentaire)
+INSERT INTO Avis(UtilisateurID,ThemeID,Note,Commentaire,DateCommentaire)
 
 VALUES
-(1,2,'Très très bien','2020-06-15'),
-(2,2,'Génial','2020-06-14'),
-(4,2,'pas top','2020-06-17');
+(1,2,4,'Très très bien','2020-06-15'),
+(2,2,5,'Génial','2020-06-14'),
+(3,2,2,'pas top','2020-06-17');
 
 
 

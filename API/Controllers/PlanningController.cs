@@ -56,7 +56,6 @@ namespace API.Controllers
         //GET
 
         [HttpGet]
-        //[Route("Get")]
         public IActionResult Get()
         {
             IEnumerable<Planning> list = _planRepo.Get();
@@ -64,8 +63,7 @@ namespace API.Controllers
         }
 
 
-        //[HttpGet]
-        [Route("GetById/{Id}")]
+        [HttpGet("{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
             Planning plan = new Planning();

@@ -24,11 +24,11 @@ namespace DAL.Repository.Repositories
         public int Create(Theme theme)
         {
             Command cmd = new Command("Create_Theme", true);
-            cmd.AddParameter("nom", theme.Nom);
-            cmd.AddParameter("description", theme.Description);
-            cmd.AddParameter("heureOuverture", theme.HeureOuverture);
-            cmd.AddParameter("heureFermeture", theme.HeureFermeture);
-            cmd.AddParameter("lienSiteWeb", theme.LienSiteWeb);
+            cmd.AddParameter("Nom", theme.Nom);
+            cmd.AddParameter("Description", theme.Description);
+            cmd.AddParameter("HeureOuverture", theme.HeureOuverture);
+            cmd.AddParameter("HeureFermeture", theme.HeureFermeture);
+            cmd.AddParameter("LienSiteWeb", theme.LienSiteWeb);
 
             int Success = 0;
             try
@@ -61,13 +61,14 @@ namespace DAL.Repository.Repositories
             Command cmd = new Command("Select * from Theme");
             return _connection.ExecuteReader(cmd, reader => new Theme()
             {
-                ThemeID = (int)reader["UtilisateurId"],
-                Nom = reader["nom"].ToString(),
-                Description = reader["description"].ToString(),
-                HeureOuverture = reader["DateNaiss"] is DBNull ? null : (DateTime?)reader["heureOuverture"],
-                HeureFermeture = reader["DateNaiss"] is DBNull ? null : (DateTime?)reader["heureOuverture"],
-                LienSiteWeb = reader["lienSiteWeb"] is DBNull ? null : reader["lienSiteWeb"].ToString(),
-            });
+                ThemeID = (int)reader["ThemeID"],
+                Nom = reader["Nom"].ToString(),
+                Description = reader["Description"].ToString(),
+                HeureOuverture = reader["HeureOuverture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
+                HeureFermeture = reader["HeureFermeture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
+                LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
+                AdresseID = (int)reader["AdresseId"]
+            }) ;
 
         }
 
@@ -81,11 +82,12 @@ namespace DAL.Repository.Repositories
             return _connection.ExecuteReader(cmd, reader => new Theme()
             {
                 ThemeID = (int)reader["themeId"],
-                Nom = reader["nom"].ToString(),
-                Description = reader["description"].ToString(),
-                HeureOuverture = reader["DateNaiss"] is DBNull ? null : (DateTime?)reader["heureOuverture"],
-                HeureFermeture = reader["DateNaiss"] is DBNull ? null : (DateTime?)reader["heureOuverture"],
-                LienSiteWeb = reader["lienSiteWeb"] is DBNull ? null : reader["lienSiteWeb"].ToString(),
+                Nom = reader["Nom"].ToString(),
+                Description = reader["Description"].ToString(),
+                HeureOuverture = reader["HeureOuverture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
+                HeureFermeture = reader["HeureFermeture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
+                LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
+                AdresseID = (int)reader["AdresseId"]
 
             }).SingleOrDefault();
         }
@@ -95,11 +97,12 @@ namespace DAL.Repository.Repositories
         public int Update(Theme theme)
         {
             Command cmd = new Command("Update_Theme", true);
-            cmd.AddParameter("nom", theme.Nom);
-            cmd.AddParameter("description", theme.Description);
-            cmd.AddParameter("heureOuverture", theme.HeureOuverture);
-            cmd.AddParameter("heureFermeture", theme.HeureFermeture);
-            cmd.AddParameter("lienSiteWeb", theme.LienSiteWeb);
+            cmd.AddParameter("Nom", theme.Nom);
+            cmd.AddParameter("Description", theme.Description);
+            cmd.AddParameter("HeureOuverture", theme.HeureOuverture);
+            cmd.AddParameter("HeureFermeture", theme.HeureFermeture);
+            cmd.AddParameter("LienSiteWeb", theme.LienSiteWeb);
+            
             int success = 0;
             try
             {

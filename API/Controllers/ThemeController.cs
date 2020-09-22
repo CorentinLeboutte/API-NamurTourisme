@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using API.Mappers;
+using API.Modeles;
 using DAL.Models;
 using DAL.Repository.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -14,9 +17,12 @@ namespace API.Controllers
     public class ThemeController : ControllerBase
     {
         private ThemeRepository _themeRepo;
-        public ThemeController(ThemeRepository themeRepo)
+        private AdresseRepository _adRepo;
+
+        public ThemeController(ThemeRepository themeRepo, AdresseRepository adRepo)
         {
             _themeRepo = themeRepo;
+            _adRepo = adRepo;
         }
 
         //CREATE
@@ -60,7 +66,12 @@ namespace API.Controllers
         //[Route("Get")]
         public IActionResult Get()
         {
-            IEnumerable<Theme> list = _themeRepo.Get();
+            List<ThemeWithAdress> list = _themeRepo.Get().Select(x => x.DalToApi()).ToList();
+            foreach(ThemeWithAdress theme in list)
+            {
+                theme.Adresse = _adRepo.GetById(theme.AdresseID);
+            }
+            
             return Ok(list);
         }
 
@@ -69,8 +80,9 @@ namespace API.Controllers
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
-            Theme theme = new Theme();
-            theme = _themeRepo.GetById(Id);
+            ThemeWithAdress theme = _themeRepo.GetById(Id).DalToApi();
+            theme.Adresse = _adRepo.GetById(theme.AdresseID);
+
             return Ok(theme);
         }
 

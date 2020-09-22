@@ -36,6 +36,7 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("numFax", user.NumFax);
             cmd.AddParameter("eMail", user.EMail);
             cmd.AddParameter("mdp", user.Mdp);
+            cmd.AddParameter("adresseId", user.AdresseID);
 
             int Success = 0;
             try
@@ -75,7 +76,8 @@ namespace DAL.Repository.Repositories
                 NumTelPortable = reader["NumTelportable"].ToString(),
                 NumFax = reader["NumFax"] is DBNull ? null : reader["NumFax"].ToString(),
                 EMail = reader["EMail"].ToString(),
-                Mdp = reader["mdp"].ToString(),
+                AdresseID = (int)reader["AdresseId"]
+
             });
 
         }
@@ -98,7 +100,7 @@ namespace DAL.Repository.Repositories
                 NumTelPortable = reader["NumTelportable"].ToString(),
                 NumFax = reader["NumFax"] is DBNull ? null : reader["NumFax"].ToString(),
                 EMail = reader["EMail"].ToString(),
-                Mdp = reader["mdp"].ToString(),
+                AdresseID = (int)reader["AdresseId"]
             }).SingleOrDefault();
         }
 

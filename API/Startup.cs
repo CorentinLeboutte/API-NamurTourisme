@@ -40,6 +40,18 @@ namespace API
             services.AddSingleton<ThemeRepository>();
             services.AddSingleton<TypeThemeRepository>();
             services.AddSingleton<UtilisateurRepository>();
+            services.AddSingleton<AvisRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "AccessGranted",
+                    builder =>
+                    {
+                        builder.WithOrigins("https://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+            });
 
         }
 
@@ -61,6 +73,10 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseRouting();
+
+            app.UseCors("AccessGranted");
         }
     }
 }
