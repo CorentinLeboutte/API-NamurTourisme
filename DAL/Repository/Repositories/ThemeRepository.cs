@@ -29,6 +29,9 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("HeureOuverture", theme.HeureOuverture);
             cmd.AddParameter("HeureFermeture", theme.HeureFermeture);
             cmd.AddParameter("LienSiteWeb", theme.LienSiteWeb);
+            cmd.AddParameter("TypeDePaiement", theme.TypeDePaiement);
+            cmd.AddParameter("PrixMin", theme.PrixMin);
+            cmd.AddParameter("PrixMax", theme.PrixMax);
 
             int Success = 0;
             try
@@ -67,7 +70,10 @@ namespace DAL.Repository.Repositories
                 HeureOuverture = reader["HeureOuverture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
                 HeureFermeture = reader["HeureFermeture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
                 LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
-                AdresseID = (int)reader["AdresseId"]
+                AdresseID = (int)reader["AdresseId"],
+                TypeDePaiement = reader["TypeDePaiement"] is DBNull ? null : reader["TypeDePaiement"].ToString(),
+                PrixMin = reader["PrixMin"] is DBNull ? null : (int?)reader["PrixMin"],
+                PrixMax = reader["PrixMax"] is DBNull ? null : (int?)reader["PrixMax"]
             }) ;
 
         }
@@ -87,7 +93,10 @@ namespace DAL.Repository.Repositories
                 HeureOuverture = reader["HeureOuverture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
                 HeureFermeture = reader["HeureFermeture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
                 LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
-                AdresseID = (int)reader["AdresseId"]
+                AdresseID = (int)reader["AdresseId"],
+                TypeDePaiement = reader["TypeDePaiement"] is DBNull ? null : reader["TypeDePaiement"].ToString(),
+                PrixMin = reader["PrixMin"] is DBNull ? null : (int?)reader["PrixMin"],
+                PrixMax = reader["PrixMax"] is DBNull ? null : (int?)reader["PrixMax"]
 
             }).SingleOrDefault();
         }
@@ -102,6 +111,9 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("HeureOuverture", theme.HeureOuverture);
             cmd.AddParameter("HeureFermeture", theme.HeureFermeture);
             cmd.AddParameter("LienSiteWeb", theme.LienSiteWeb);
+            cmd.AddParameter("TypeDePaiement", theme.TypeDePaiement);
+            cmd.AddParameter("PrixMin", theme.PrixMin);
+            cmd.AddParameter("PrixMax", theme.PrixMax);
             
             int success = 0;
             try

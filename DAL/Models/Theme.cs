@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Text;
 
 namespace DAL.Models
@@ -19,6 +20,12 @@ namespace DAL.Models
         public string LienSiteWeb { get; set; }
 
         public int AdresseID { get; set; }
+
+        public string TypeDePaiement { get; set; }
+
+        public int? PrixMin { get; set; }
+
+        public int? PrixMax { get; set; }
 
 
     }

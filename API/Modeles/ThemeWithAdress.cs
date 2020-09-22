@@ -23,5 +23,12 @@ namespace API.Modeles
         public Adresse Adresse { get; set; }
 
         public int AdresseID { get; set; }
+
+        public string TypeDePaiement { get; set; }
+
+        public int? PrixMin { get; set; }
+
+        public int? PrixMax { get; set; }
+
     }
 }

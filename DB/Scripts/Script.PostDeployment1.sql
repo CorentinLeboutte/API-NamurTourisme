@@ -58,14 +58,14 @@ VALUES
 
 /*AJOUT THEME */
 
-INSERT INTO Theme (Nom,[Description],HeureOuverture,HeureFermeture,LienSiteWeb, AdresseID)
+INSERT INTO Theme (Nom,[Description],HeureOuverture,HeureFermeture,LienSiteWeb, AdresseID,TypeDePaiement, PrixMin, PrixMax)
 
 VALUES
 
 ('Citadelle de Namur','La citadelle de Namur, en Belgique, est une ancienne place forte dominant la ville et le confluent. Il s''agit d''une des plus grandes citadelles
-d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La termitière de l''Europe" par Napoléon Iᵉʳ.','09:00:00','19:00:00','https://citadelle.namur.be/fr',1),
+d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La termitière de l''Europe" par Napoléon Iᵉʳ.','09:00:00','19:00:00','https://citadelle.namur.be/fr',1,'Liquide, Bancontact, visa',5,12),
 
-('Musee Felicien Rops','Peintures, gravures, dessins et lettres de l''artiste belge du 19e siècle dans un ancien hôtel de maître.','10:00:00','18:00:00','https://www.museerops.be/',1);
+('Musee Felicien Rops','Peintures, gravures, dessins et lettres de l''artiste belge du 19e siècle dans un ancien hôtel de maître.','10:00:00','18:00:00','https://www.museerops.be/',1,'Liquide, Bancontact',5,10);
 
 /*PLANNING*/
 

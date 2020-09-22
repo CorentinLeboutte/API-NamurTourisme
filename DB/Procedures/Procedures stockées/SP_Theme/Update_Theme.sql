@@ -5,7 +5,10 @@
 	@heureOuverture datetime2(7),
 	@heureFermeture datetime2(7),
 	@lienSiteWeb nvarchar(320),
-	@adresseID int
+	@adresseID int,
+	@typeDePaiement nvarchar(50),
+	@prixMin money,
+	@prixMax money
 
 
 AS
@@ -17,9 +20,11 @@ AS
 		AdresseId = @adresseID,
 		HeureOuverture = @heureOuverture,
 		HeureFermeture = @heureFermeture,
-		LienSiteWeb = @lienSiteWeb
+		LienSiteWeb = @lienSiteWeb,
+		TypeDePaiement = @typeDePaiement,
+		PrixMin = @prixMin,
+		PrixMax = @prixMax
 		
-
 
 		WHERE ThemeID = @themeID
 
