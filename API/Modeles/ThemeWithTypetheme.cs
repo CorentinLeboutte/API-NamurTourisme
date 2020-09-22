@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace API.Modeles
 
         public int AdresseID { get; set; }
 
-        public int TypeTheme { get; set; }
+        public TypeTheme TypeTheme { get; set; }
 
         public string TypeDePaiement { get; set; }
 
