@@ -69,7 +69,7 @@ d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La 
 
 /*PLANNING*/
 
-INSERT INTO Planning([Date],HeureDebut,HeureFin,UtilisateurID,isActive)
+INSERT INTO Planning([Date],HeureDebut,HeureFin,OrganisateurID,UtilisateurID)
 
 VALUES
 ('2020-06-15','10:00:00','18:00:00',1,1),

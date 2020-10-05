@@ -55,6 +55,10 @@ namespace API.Controllers
         }
 
         //GET
+
+        //POSTMAN OK 
+
+
         [HttpGet]
         //[Route("Get")]
         public IActionResult Get()

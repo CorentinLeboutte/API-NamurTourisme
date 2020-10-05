@@ -29,6 +29,18 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
+
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                    });
+            });
             services.AddControllers();
             services.AddSingleton<DbProviderFactory>(sp => SqlClientFactory.Instance);
             services.AddSingleton(sp => new ConnectionStringObj(@"Data Source=(localdb)\MSSQLLocalDB;
@@ -73,6 +85,9 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors();
+
 
             app.UseRouting();
 

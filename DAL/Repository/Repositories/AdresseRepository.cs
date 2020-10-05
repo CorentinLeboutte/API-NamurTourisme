@@ -65,7 +65,7 @@ namespace DAL.Repository.Repositories
 
         public IEnumerable<Adresse> Get()
         {
-            Command cmd = new Command("Select * from Adresse");
+            Command cmd = new Command("Select * from Adresse WHERE isActive = 1");
             return _connection.ExecuteReader(cmd, reader => new Adresse()
             {
                 AdresseID = (int)reader["AdresseId"],
@@ -85,7 +85,7 @@ namespace DAL.Repository.Repositories
 
         public Adresse GetById(int Id)
         {
-            Command cmd = new Command("Select * from Adresse WHERE AdresseID = @Id");
+            Command cmd = new Command("Select * from Adresse WHERE AdresseID = @Id AND isActive = 1");
             cmd.AddParameter("Id", Id);
 
             return _connection.ExecuteReader(cmd, reader => new Adresse()

@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Adresse.sql" />
-    <Build Include="Tables\Planning.sql" />
     <Build Include="Tables\Theme.sql" />
     <Build Include="Tables\TypeTheme.sql" />
     <Build Include="Tables\Utilisateur.sql" />
@@ -118,6 +117,7 @@
     <Build Include="Procedures\Procedures stockées\SP_Avis\Delete_Avis.sql" />
     <Build Include="Procedures\Procedures stockées\SP_Avis\Update_Avis.sql" />
     <Build Include="Triggers\Trigger_DeleteAvis.sql" />
+    <Build Include="Tables\Planning.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />

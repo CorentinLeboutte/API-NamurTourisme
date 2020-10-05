@@ -22,7 +22,8 @@ namespace API.Controllers
 
         //CREATE
 
-        [Route("Create")]
+        //[Route("Create")]
+        [HttpPut]
         public IActionResult Create([FromBody] Avis avis)
         {
             int success = _avRepo.Create(avis);
@@ -34,8 +35,7 @@ namespace API.Controllers
 
 
         //UPDATE
-
-        [Route("Update")]
+        [HttpPut]
         public IActionResult Update([FromBody] Avis avis)
         {
             int success = _avRepo.Update(avis);
@@ -47,7 +47,8 @@ namespace API.Controllers
 
         //DELETE
 
-        [Route("Delete/{Id}")]
+        [HttpPut("{Id}")]
+        //[Route("Delete/{Id}")]
         public IActionResult Delete(/*[FromRoute]*/ int Id)
         {
             _avRepo.Delete(Id);
@@ -65,8 +66,8 @@ namespace API.Controllers
         }
 
 
-        //[HttpGet]
-        [Route("GetById/{Id}")]
+        [HttpGet("{Id}")]
+        //[Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
             Avis av = new Avis();

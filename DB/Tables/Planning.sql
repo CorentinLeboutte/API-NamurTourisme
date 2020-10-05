@@ -1,13 +1,11 @@
 ﻿CREATE TABLE [dbo].[Planning]
 (
-	[PlanningID] INT Identity NOT NULL , 
-    [Date] DATETIME2 NOT NULL, 
-    [HeureDebut] DATETIME NOT NULL, 
-    [HeureFin] DATETIME NOT NULL,
-    [UtilisateurID] INT NOT NULL, 
-    [isActive] BIT default 1 NOT NULL, 
-    CONSTRAINT [PK_Planning] PRIMARY KEY ([PlanningID]),
-    CONSTRAINT [FK_Planning_ToUtilisateur] FOREIGN KEY ([UtilisateurID]) REFERENCES [Utilisateur]([UtilisateurID]), 
-    
+	[PlanningID] INT NOT NULL IDENTITY, 
+    [Date] NCHAR(10) NOT NULL, 
+    [HeureDebut] NCHAR(10) NOT NULL, 
+    [HeureFin] NCHAR(10) NOT NULL, 
+    [OrganisateurID] NCHAR(10) NOT NULL, 
+    [UtilisateurID] NCHAR(10) NOT NULL, 
+    [isActive] BIT NOT NULL DEFAULT 1, 
+    CONSTRAINT [PK_Planning] PRIMARY KEY ([PlanningID]) 
 )
-
