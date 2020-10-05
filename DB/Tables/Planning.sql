@@ -5,7 +5,8 @@
     [HeureDebut] NCHAR(10) NOT NULL, 
     [HeureFin] NCHAR(10) NOT NULL, 
     [OrganisateurID] NCHAR(10) NOT NULL, 
-    [UtilisateurID] NCHAR(10) NOT NULL, 
+    [UtilisateurID] INT NOT NULL, 
     [isActive] BIT NOT NULL DEFAULT 1, 
-    CONSTRAINT [PK_Planning] PRIMARY KEY ([PlanningID]) 
+    CONSTRAINT [PK_Planning] PRIMARY KEY ([PlanningID]),
+    CONSTRAINT [FK_Planning_ToUtilisateur] FOREIGN KEY ([UtilisateurID]) REFERENCES [Utilisateur](UtilisateurID)
 )

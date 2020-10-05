@@ -91,6 +91,31 @@ VALUES
 (2,2,5,'Génial','2020-06-14'),
 (3,2,2,'pas top','2020-06-17');
 
+/*MTM PlanningTheme */
+
+Insert Into PlanningTheme(PlanningID,ThemeID)
+
+Values
+('1','1'),
+('2','2'),
+('3','2'),
+('4','2'),
+('5','1'),
+('6','1'),
+('7','2');
+
+
+
+/*MTM ThemeTypeTheme*/
+
+Insert into ThemeTypeTheme(ThemeID,TypeThemeID)
+
+values
+
+('1','2'),
+('2','1'),
+('1','3');
+
 
 
 

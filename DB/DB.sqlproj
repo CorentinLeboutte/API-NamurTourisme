@@ -118,6 +118,7 @@
     <Build Include="Procedures\Procedures stockées\SP_Avis\Update_Avis.sql" />
     <Build Include="Triggers\Trigger_DeleteAvis.sql" />
     <Build Include="Tables\Planning.sql" />
+    <Build Include="Procedures\Procedures stockées\SP_TypeTheme\ThemeParTypeTheme.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
