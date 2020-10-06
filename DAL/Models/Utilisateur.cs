@@ -15,7 +15,7 @@ namespace DAL.Models
         public string Prenom { get; set; }
 
         public int AdresseID { get; set; }
-
+        public Adresse AdresseId { get; set; }
         public DateTime DateNaiss { get; set; }
 
         public string NumTelDomicile { get; set; }
@@ -27,6 +27,7 @@ namespace DAL.Models
         public string EMail { get; set; }
 
         public string Mdp { get; set; }
+
 
     }
 }

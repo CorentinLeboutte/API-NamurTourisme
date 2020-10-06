@@ -64,23 +64,24 @@ namespace API.Controllers
         [HttpGet]
 
         //[Route("Get")]
+
         public IActionResult Get()
         {
-            List<ThemeWithAdress> list = _themeRepo.Get().Select(x => x.DalToApi()).ToList();
-            foreach(ThemeWithAdress theme in list)
+            List<Modeles.ThemeWithAdress> list = _themeRepo.Get().Select(x => x.DalToApi()).ToList();
+            foreach (Modeles.ThemeWithAdress theme in list)
             {
                 theme.Adresse = _adRepo.GetById(theme.AdresseID);
             }
-            
+
             return Ok(list);
         }
 
-        //[HttpGet]
+        [HttpGet]
 
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
-            ThemeWithAdress theme = _themeRepo.GetById(Id).DalToApi();
+            Modeles.ThemeWithAdress theme = _themeRepo.GetById(Id).DalToApi();
             theme.Adresse = _adRepo.GetById(theme.AdresseID);
 
             return Ok(theme);

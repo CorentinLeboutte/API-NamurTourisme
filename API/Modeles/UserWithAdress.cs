@@ -20,6 +20,8 @@ namespace API.Modeles
 
         public int AdresseId { get; set; }
 
+        public Adresse AdresseID { get;  set; }
+
         public DateTime DateNaiss { get; set; }
 
         public string NumTelDomicile { get; set; }

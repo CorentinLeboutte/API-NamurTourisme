@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DAL.Models
+namespace API.Modeles
 {
-    public class AvisWithUtilisateur
+    public class AvisWithUser
     {
         public int AvisID { get; set; }
 

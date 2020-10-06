@@ -17,5 +17,7 @@ namespace DAL.Models
 
         public int UtilisateurID { get; set; }
 
+        public Theme ThemeID { get; set; }
+
     }
 }

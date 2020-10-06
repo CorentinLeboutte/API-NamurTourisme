@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DAL.Models
 {
-    public class PlanningWithUtilisateur
+    public class PlanningWithUser
     {
         public int PlanningID { get; set; }
 

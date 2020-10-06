@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Mappers;
-using API.Modeles;
+using API = API.Modeles;
 using DAL.Models;
 using DAL.Repository.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using API.Modeles;
 
 namespace API.Controllers
 {
@@ -64,8 +65,8 @@ namespace API.Controllers
         //[Route("Get")]
         public IActionResult Get()
         {
-            List<UserWithAdress> list = _utRepo.Get().Select(x => x.DalToApi()).ToList();
-            foreach (UserWithAdress user in list)
+            List<Modeles.UserWithAdress> list = _utRepo.Get().Select(x => x.DalToApi()).ToList();
+            foreach (Modeles.UserWithAdress user in list)
             {
                 user.Adresse = _adRepo.GetById(user.AdresseId);
             }
@@ -77,7 +78,7 @@ namespace API.Controllers
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
-            UserWithAdress ut = _utRepo.GetById(Id).DalToApi();
+            Modeles.UserWithAdress ut = _utRepo.GetById(Id).DalToApi();
             ut.Adresse = _adRepo.GetById(ut.AdresseId);
 
             return Ok(ut);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API.Modeles
 {
-    public class PlanningWithUtilisateur
+    public class PlanningWithUser
     {
         public int PlanningID { get; set; }
 

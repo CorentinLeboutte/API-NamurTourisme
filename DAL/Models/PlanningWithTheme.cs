@@ -16,7 +16,7 @@ namespace DAL.Models
 
         public int UtilisateurID { get; set; }
 
-        public int themeID { get; set; }
+        public Theme ThemeID { get; set; }
 
         public Theme Nom { get; set; }
     }
