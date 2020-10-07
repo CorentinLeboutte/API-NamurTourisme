@@ -14,9 +14,7 @@ namespace DAL.Models
 
         public string Prenom { get; set; }
 
-        public Adresse Adresse { get; set; }
-
-        public int AdresseId { get; set; }
+        public Adresse AdresseID { get; set; }
 
         public DateTime DateNaiss { get; set; }
 

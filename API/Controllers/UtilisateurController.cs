@@ -65,10 +65,10 @@ namespace API.Controllers
         //[Route("Get")]
         public IActionResult Get()
         {
-            List<Modeles.UserWithAdress> list = _utRepo.Get().Select(x => x.DalToApi()).ToList();
+            List<Modeles.UserWithAdress> list = _utRepo.Get().Select(x => x.DalToApiUserWithAdress()).ToList();
             foreach (Modeles.UserWithAdress user in list)
             {
-                user.Adresse = _adRepo.GetById(user.AdresseId);
+                user.Adresse = _adRepo.GetById(user.AdresseID);
             }
             return Ok(list);
         }
@@ -78,8 +78,8 @@ namespace API.Controllers
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
-            Modeles.UserWithAdress ut = _utRepo.GetById(Id).DalToApi();
-            ut.Adresse = _adRepo.GetById(ut.AdresseId);
+            Modeles.UserWithAdress ut = _utRepo.GetById(Id).DalToApiUserWithAdress();
+            ut.Adresse = _adRepo.GetById(ut.AdresseID);
 
             return Ok(ut);
 

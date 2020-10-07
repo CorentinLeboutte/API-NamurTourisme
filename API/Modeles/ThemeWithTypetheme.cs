@@ -22,13 +22,13 @@ namespace API.Modeles
 
         public int AdresseID { get; set; }
 
-        public TypeTheme TypeTheme { get; set; }
+        public IEnumerable<TypeTheme> TypeTheme { get; set; }
 
         public string TypeDePaiement { get; set; }
 
-        public int? PrixMin { get; set; }
+        public decimal? PrixMin { get; set; }
 
-        public int? PrixMax { get; set; }
+        public decimal? PrixMax { get; set; }
 
     }
 }

@@ -130,5 +130,28 @@ namespace DAL.Repository.Repositories
 
         }
 
+        //GETBYTYPETHEME
+
+        public IEnumerable<Theme> GetByTypeTheme(int Id)
+        {
+            Command cmd = new Command("Select * from Theme WHERE ThemeID in (SELECT ThemeID FROM ThemeTypeTheme WHERE TypeThemeID = @Id)");
+            cmd.AddParameter("Id", Id);
+
+            return _connection.ExecuteReader(cmd, reader => new Theme()
+            {
+                ThemeID = (int)reader["themeId"],
+                Nom = reader["Nom"].ToString(),
+                Description = reader["Description"].ToString(),
+                HeureOuverture = reader["HeureOuverture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
+                HeureFermeture = reader["HeureFermeture"] is DBNull ? null : (DateTime?)reader["HeureOuverture"],
+                LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
+                AdresseID = (int)reader["AdresseId"],
+                TypeDePaiement = reader["TypeDePaiement"] is DBNull ? null : reader["TypeDePaiement"].ToString(),
+                PrixMin = reader["PrixMin"] is DBNull ? null : (decimal?)reader["PrixMin"],
+                PrixMax = reader["PrixMax"] is DBNull ? null : (decimal?)reader["PrixMax"]
+
+            });
+        }
+
     }
 }

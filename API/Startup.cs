@@ -19,6 +19,7 @@ namespace API
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -41,6 +42,8 @@ namespace API
                         builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
                     });
             });
+
+
             services.AddControllers();
             services.AddSingleton<DbProviderFactory>(sp => SqlClientFactory.Instance);
             services.AddSingleton(sp => new ConnectionStringObj(@"Data Source=(localdb)\MSSQLLocalDB;
@@ -79,6 +82,10 @@ namespace API
 
             app.UseRouting();
 
+            app.UseCors();
+
+            app.UseCors("AccessGranted");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -86,12 +93,9 @@ namespace API
                 endpoints.MapControllers();
             });
 
-            app.UseCors();
-
-
             app.UseRouting();
 
-            app.UseCors("AccessGranted");
+            
         }
     }
 }

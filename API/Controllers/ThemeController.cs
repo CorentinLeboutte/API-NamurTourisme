@@ -67,7 +67,7 @@ namespace API.Controllers
 
         public IActionResult Get()
         {
-            List<Modeles.ThemeWithAdress> list = _themeRepo.Get().Select(x => x.DalToApi()).ToList();
+            List<Modeles.ThemeWithAdress> list = _themeRepo.Get().Select(x => x.DalToApiThemeWithAdress()).ToList();
             foreach (Modeles.ThemeWithAdress theme in list)
             {
                 theme.Adresse = _adRepo.GetById(theme.AdresseID);
@@ -81,11 +81,25 @@ namespace API.Controllers
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
-            Modeles.ThemeWithAdress theme = _themeRepo.GetById(Id).DalToApi();
+            Modeles.ThemeWithAdress theme = _themeRepo.GetById(Id).DalToApiThemeWithAdress();
             theme.Adresse = _adRepo.GetById(theme.AdresseID);
 
             return Ok(theme);
         }
+
+
+        [HttpGet]
+
+        [Route("GetByTypeTheme/{Id}")]
+        public IActionResult GetByTypeTheme(/*[FromRoute]*/ int Id)
+        {
+            IEnumerable<Modeles.ThemeWithAdress> themes = _themeRepo.GetByTypeTheme(Id).Select(tt=>tt.DalToApiThemeWithAdress());
+            themes = themes.Select(tt=> {
+                tt.Adresse = _adRepo.GetById(tt.AdresseID);
+                return tt; });
+            return Ok(themes);
+        }
+
 
 
 

@@ -19,7 +19,7 @@ namespace API.Mappers
                 Civilite = u.Civilite,
                 Nom = u.Nom,
                 Prenom = u.Prenom,
-                AdresseId = u.AdresseID,
+                AdresseID = u.AdresseID,
                 //Adresse -> rue, cp, ville, numero
                 DateNaiss = u.DateNaiss,
                 NumTelDomicile = u.NumTelDomicile,
@@ -39,7 +39,7 @@ namespace API.Mappers
                 Civilite = u.Civilite,
                 Nom = u.Nom,
                 Prenom = u.Prenom,
-                AdresseId = u.AdresseID,
+                AdresseID = u.AdresseID,
                 DateNaiss = u.DateNaiss,
                 NumTelDomicile = u.NumTelDomicile,
                 NumTelPortable = u.NumTelPortable,
@@ -61,6 +61,8 @@ namespace API.Mappers
                 HeureFermeture = t.HeureFermeture,
                 LienSiteWeb = t.LienSiteWeb,
                 AdresseID = t.AdresseID,
+                PrixMin = t.PrixMin,
+                PrixMax = t.PrixMax
 
             };
         }

@@ -16,11 +16,7 @@ namespace API.Modeles
 
         public string Prenom { get; set; }
 
-        public Adresse Adresse { get; set; }
-
-        public int AdresseId { get; set; }
-
-        public Adresse AdresseID { get;  set; }
+        public int AdresseID { get; set; }
 
         public DateTime DateNaiss { get; set; }
 
@@ -33,5 +29,6 @@ namespace API.Modeles
         public string EMail { get; set; }
 
         public string Mdp { get; set; }
+        public Adresse Adresse { get; internal set; }
     }
 }

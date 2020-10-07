@@ -23,9 +23,9 @@ namespace DAL.Models
 
         public string TypeDePaiement { get; set; }
 
-        public int? PrixMin { get; set; }
+        public decimal? PrixMin { get; set; }
 
-        public int? PrixMax { get; set; }
+        public decimal? PrixMax { get; set; }
 
 
     }
