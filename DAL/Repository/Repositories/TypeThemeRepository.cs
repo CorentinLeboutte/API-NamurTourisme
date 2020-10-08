@@ -66,7 +66,7 @@ namespace DAL.Repository.Repositories
 
         public TypeTheme GetById(int Id)
         {
-            Command cmd = new Command("Select * from TypeThee WHERE TypeThemeID = @Id");
+            Command cmd = new Command("Select * from TypeTheme WHERE TypeThemeID = @Id");
             cmd.AddParameter("Id", Id);
 
             return _connection.ExecuteReader(cmd, reader => new TypeTheme()
@@ -94,6 +94,19 @@ namespace DAL.Repository.Repositories
 
             return success;
 
+        }
+
+        public IEnumerable<TypeTheme> GetByTheme(int id)
+        {
+            Command cmd = new Command("Select * from TypeTheme WHERE TypeThemeID in (select TypeThemeID from ThemeTypeTheme where themeID =@ID)");
+            cmd.AddParameter("ID", id);
+
+            return _connection.ExecuteReader(cmd, reader => new TypeTheme()
+            {
+                TypeThemeID = (int)reader["TypeThemeId"],
+                Nom = reader["Nom"].ToString(),
+            });
+            
         }
 
     }

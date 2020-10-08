@@ -21,6 +21,6 @@ namespace API.Modeles
 
         public DateTime? DateCommentaire { get; set; }
 
-        public Theme Theme { get; set; }
+        public ThemeLite Theme { get; set; }
     }
 }

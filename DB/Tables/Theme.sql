@@ -11,6 +11,7 @@
     [TypeDePaiement] NVARCHAR(50) NULL, 
     [PrixMin] MONEY NULL DEFAULT 0, 
     [PrixMax] MONEY NULL DEFAULT 0, 
+    [Image] NVARCHAR(50) NOT NULL, 
     CONSTRAINT [PK_Theme] PRIMARY KEY ([ThemeID]),
     CONSTRAINT [FK_Theme_ToAdresse] FOREIGN KEY ([AdresseID]) REFERENCES [Adresse]([AdresseID]), 
 )

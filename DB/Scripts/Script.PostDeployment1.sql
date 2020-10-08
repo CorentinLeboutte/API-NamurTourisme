@@ -15,11 +15,22 @@ INSERT INTO Adresse (Longitude, Latitude, Rue, Numero, Boite,Ville, CodePostal, 
 
 VALUES 
 
-('blabla','blabla','Rue machin','85',NULL,'Namur',5000,NULL, 'Belgique'),
+/*1*/('blabla','blabla','Rue machin','85',NULL,'Namur',5000,NULL, 'Belgique'),
 
-('50°N','4°E','Rue Charles Simon','26',NULL,'Namur',5004,NULL,'Belgique'),
+/*2*/('50°N','4°E','Rue Charles Simon','26',NULL,'Namur',5004,NULL,'Belgique'),
 
-('blabla','blabla','Rue hello','74',NULL,'Charleroi',6000,NULL, 'Belgique');
+/*3*/('blabla','blabla','Rue hello','74',NULL,'Charleroi',6000,NULL, 'Belgique'),
+
+/*4*/('50°27''43.2"N','4°51''54.1"E','rue des Brasseurs','61',NULL,'Namur',5000,NULL, 'Belgique'),
+
+/*5*/('50°27''23.7"N','4°52''18.3"E','Avenue du Bourgmestre Jean Materne','123',NULL,'Namur',5000,NULL, 'Belgique'),
+
+/*6*/('50°26''41.5"N','4°52''18.3"E','Avenue du Bourgmestre Jean Materne','123',NULL,'Namur',5000,NULL, 'Belgique');
+
+
+
+
+
 
 
 
@@ -58,14 +69,35 @@ VALUES
 
 /*AJOUT THEME */
 
-INSERT INTO Theme (Nom,[Description],HeureOuverture,HeureFermeture,LienSiteWeb, AdresseID,TypeDePaiement, PrixMin, PrixMax)
+INSERT INTO Theme (Nom,[Description],HeureOuverture,HeureFermeture,LienSiteWeb, AdresseID,TypeDePaiement, PrixMin, PrixMax,[Image])
 
 VALUES
 
-('Citadelle de Namur','La citadelle de Namur, en Belgique, est une ancienne place forte dominant la ville et le confluent. Il s''agit d''une des plus grandes citadelles
-d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La termitière de l''Europe" par Napoléon Iᵉʳ.','09:00:00','19:00:00','https://citadelle.namur.be/fr',1,'Liquide, Bancontact, visa',5,12),
+/*1*/('Citadelle de Namur','La citadelle de Namur, en Belgique, est une ancienne place forte dominant la ville et le confluent. Il s''agit d''une des plus grandes citadelles
+d''Europe et son vaste réseau de souterrains lui valut d''être surnommée "La termitière de l''Europe" par Napoléon Iᵉʳ.','09:00:00','19:00:00','https://citadelle.namur.be/fr',1,'Liquide, Bancontact, visa',5,12,'https://ibb.co/VtFc74V'),
 
-('Musee Felicien Rops','Peintures, gravures, dessins et lettres de l''artiste belge du 19e siècle dans un ancien hôtel de maître.','10:00:00','18:00:00','https://www.museerops.be/',1,'Liquide, Bancontact',5,10);
+/*2*/('Musee Felicien Rops','Peintures, gravures, dessins et lettres de l''artiste belge du 19e siècle dans un ancien hôtel de maître.','10:00:00','18:00:00','https://www.museerops.be/',1,'Liquide, Bancontact',5,10,'https://i.ibb.co/Bj4dmLp/Rops1.jpg'),
+
+
+
+
+/*3*/('VinoVino','Le sympathique patron vous demandera d’emblée ce que vous aimeriez boire. C’est qu’il vous réserve des petites perles de vins surtout européens. Mais on ne résiste pas non plus à une belle planche de fromage ou à un plat plus recherché, car les produits tiennent le haut de l’affiche. Le plaisir de la tradition, en toute simplicité.','10:00:00','18:00:00','http://www.vinovino.be/',4,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/P6g71Zr/VinoVino.png'),
+
+/*4*/('Le Binôme','Le sympathique patron vous demandera d’emblée ce que vous aimeriez boire. C’est qu’il vous réserve des petites perles de vins surtout européens. Mais on ne résiste pas non plus à une belle planche de fromage ou à un plat plus recherché, car les produits tiennent le haut de l’affiche. Le plaisir de la tradition, en toute simplicité.','10:00:00','18:00:00','http://www.lebinome.be/',5,'Liquide, Bancontact, Mastercard, Visa',16,37,'https://i.ibb.co/BqMCsG2/Binome.jpg'),
+
+/*5*/('Attablez-vous','Installez-vous dans votre confortable fauteuil design, admirez la salle à manger, chic aux accents colorés, et attendez-vous à être choyé. La gourmandise passe avant tout chez Charles-Edouard Jeandrain. Vous trouverez ici des gels et des espumas, mais seulement si cela est utile. Sa cuisine est pure, bien pensée et travaillée. Un savoir-faire qui vous rend heureux !','10:00:00','18:00:00','http://www.attablezvous.be/',1,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/Bj4dmLp/Rops1.jpg'),
+
+/*6*/('Bistro Belgo Belge','Situé au cœur de Namur, vous trouverez dans cet établissement des préparations maison, des plats et des viandes ...','10:00:00','18:00:00','https://www.estaminetbbb.be/',1,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/P6g71Zr/VinoVino.png'),
+
+/*7*/('VinoVino','Le sympathique patron vous demandera d’emblée ce que vous aimeriez boire. C’est qu’il vous réserve des petites perles de vins surtout européens. Mais on ne résiste pas non plus à une belle planche de fromage ou à un plat plus recherché, car les produits tiennent le haut de l’affiche. Le plaisir de la tradition, en toute simplicité.','10:00:00','18:00:00','http://www.vinovino.be/',1,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/P6g71Zr/VinoVino.png'),
+
+/*8*/('VinoVino','Le sympathique patron vous demandera d’emblée ce que vous aimeriez boire. C’est qu’il vous réserve des petites perles de vins surtout européens. Mais on ne résiste pas non plus à une belle planche de fromage ou à un plat plus recherché, car les produits tiennent le haut de l’affiche. Le plaisir de la tradition, en toute simplicité.','10:00:00','18:00:00','http://www.vinovino.be/',1,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/P6g71Zr/VinoVino.png'),
+
+/*9*/('VinoVino','Le sympathique patron vous demandera d’emblée ce que vous aimeriez boire. C’est qu’il vous réserve des petites perles de vins surtout européens. Mais on ne résiste pas non plus à une belle planche de fromage ou à un plat plus recherché, car les produits tiennent le haut de l’affiche. Le plaisir de la tradition, en toute simplicité.','10:00:00','18:00:00','http://www.vinovino.be/',1,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/P6g71Zr/VinoVino.png'),
+
+/*10*/('VinoVino','Le sympathique patron vous demandera d’emblée ce que vous aimeriez boire. C’est qu’il vous réserve des petites perles de vins surtout européens. Mais on ne résiste pas non plus à une belle planche de fromage ou à un plat plus recherché, car les produits tiennent le haut de l’affiche. Le plaisir de la tradition, en toute simplicité.','10:00:00','18:00:00','http://www.vinovino.be/',1,'Liquide, Bancontact, Mastercard, Visa',25,50,'https://i.ibb.co/P6g71Zr/VinoVino.png');
+
+
 
 /*PLANNING*/
 
@@ -112,9 +144,16 @@ Insert into ThemeTypeTheme(ThemeID,TypeThemeID)
 
 values
 
-('1','2'),
+('1','3'),
 ('2','1'),
-('1','3');
+('3','2'),
+('4','2'),
+('5','2'),
+('6','2'),
+('7','2'),
+('8','2'),
+('9','2'),
+('10','2');
 
 
 

@@ -18,8 +18,8 @@ namespace API.Modeles
 
         public int UtilisateurID { get; set; }
 
-        public Theme ThemeID { get; set; }
+        public ThemeLite ThemeID { get; set; }
 
-        public Theme Nom { get; set; }
+        public ThemeLite Nom { get; set; }
     }
 }

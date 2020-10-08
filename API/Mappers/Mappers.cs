@@ -121,7 +121,6 @@ namespace API.Mappers
                 Date = p.Date,
                 HeureDebut = p.HeureDebut,
                 HeureFin = p.HeureFin,
-                ThemeID = p.ThemeID,
 
             };
         }
@@ -134,7 +133,6 @@ namespace API.Mappers
                 Date = p.Date,
                 HeureDebut = p.HeureDebut,
                 HeureFin = p.HeureFin,
-                ThemeID = p.ThemeID,
             };
         }
 
@@ -187,6 +185,36 @@ namespace API.Mappers
                 Note = a.Note,
                 Commentaire = a.Commentaire,
                 UtilisateurID = a.UtilisateurID
+
+            };
+        }
+
+        public static A.ThemeDetailed DalToApiThemeDetailed(this D.Theme t)
+        {
+            return new A.ThemeDetailed()
+            {
+                ThemeID = t.ThemeID,
+                Nom = t.Nom,
+                Image = t.Image,
+                Description = t.Description,
+                HeureOuverture = t.HeureOuverture,
+                HeureFermeture = t.HeureFermeture,
+                LienSiteWeb = t.LienSiteWeb,
+                AdresseID = t.AdresseID,
+                PrixMin = t.PrixMin,
+                PrixMax = t.PrixMax
+
+            };
+        }
+
+        public static A.ThemeLite DalToApiThemeLite(this D.Theme t)
+        {
+            return new A.ThemeLite()
+            {
+                ThemeID = t.ThemeID,
+                Nom = t.Nom,
+                Image = t.Image,
+                Description = t.Description,
 
             };
         }

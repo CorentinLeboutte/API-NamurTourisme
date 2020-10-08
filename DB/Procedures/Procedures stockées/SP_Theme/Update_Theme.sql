@@ -8,7 +8,8 @@
 	@adresseID int,
 	@typeDePaiement nvarchar(50),
 	@prixMin money,
-	@prixMax money
+	@prixMax money,
+	@image nvarchar(50)
 
 
 AS
@@ -23,7 +24,8 @@ AS
 		LienSiteWeb = @lienSiteWeb,
 		TypeDePaiement = @typeDePaiement,
 		PrixMin = @prixMin,
-		PrixMax = @prixMax
+		PrixMax = @prixMax,
+		[Image] = @image
 		
 
 		WHERE ThemeID = @themeID

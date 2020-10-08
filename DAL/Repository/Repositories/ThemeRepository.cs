@@ -32,6 +32,7 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("TypeDePaiement", theme.TypeDePaiement);
             cmd.AddParameter("PrixMin", theme.PrixMin);
             cmd.AddParameter("PrixMax", theme.PrixMax);
+            cmd.AddParameter("Image", theme.Image);
 
             int Success = 0;
             try
@@ -72,8 +73,9 @@ namespace DAL.Repository.Repositories
                 LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
                 AdresseID = (int)reader["AdresseId"],
                 TypeDePaiement = reader["TypeDePaiement"] is DBNull ? null : reader["TypeDePaiement"].ToString(),
-                PrixMin = reader["PrixMin"] is DBNull ? null : (int?)reader["PrixMin"],
-                PrixMax = reader["PrixMax"] is DBNull ? null : (int?)reader["PrixMax"]
+                PrixMin = reader["PrixMin"] is DBNull ? null : (decimal?)reader["PrixMin"],
+                PrixMax = reader["PrixMax"] is DBNull ? null : (decimal?)reader["PrixMax"],
+                Image = reader["Image"].ToString(),
             }) ;
 
         }
@@ -95,8 +97,9 @@ namespace DAL.Repository.Repositories
                 LienSiteWeb = reader["LienSiteWeb"] is DBNull ? null : reader["LienSiteWeb"].ToString(),
                 AdresseID = (int)reader["AdresseId"],
                 TypeDePaiement = reader["TypeDePaiement"] is DBNull ? null : reader["TypeDePaiement"].ToString(),
-                PrixMin = reader["PrixMin"] is DBNull ? null : (int?)reader["PrixMin"],
-                PrixMax = reader["PrixMax"] is DBNull ? null : (int?)reader["PrixMax"]
+                PrixMin = reader["PrixMin"] is DBNull ? null : (decimal?)reader["PrixMin"],
+                PrixMax = reader["PrixMax"] is DBNull ? null : (decimal?)reader["PrixMax"],
+                Image = reader["Image"].ToString(),
 
             }).SingleOrDefault();
         }
@@ -114,7 +117,8 @@ namespace DAL.Repository.Repositories
             cmd.AddParameter("TypeDePaiement", theme.TypeDePaiement);
             cmd.AddParameter("PrixMin", theme.PrixMin);
             cmd.AddParameter("PrixMax", theme.PrixMax);
-            
+            cmd.AddParameter("Image", theme.Image);
+
             int success = 0;
             try
             {
@@ -148,8 +152,8 @@ namespace DAL.Repository.Repositories
                 AdresseID = (int)reader["AdresseId"],
                 TypeDePaiement = reader["TypeDePaiement"] is DBNull ? null : reader["TypeDePaiement"].ToString(),
                 PrixMin = reader["PrixMin"] is DBNull ? null : (decimal?)reader["PrixMin"],
-                PrixMax = reader["PrixMax"] is DBNull ? null : (decimal?)reader["PrixMax"]
-
+                PrixMax = reader["PrixMax"] is DBNull ? null : (decimal?)reader["PrixMax"],
+                Image = reader["Image"].ToString(),
             });
         }
 

@@ -1,14 +1,18 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DAL.Models
+namespace API.Modeles
 {
-    public class ThemeWithAdress
+    public class ThemeDetailed
     {
         public int ThemeID { get; set; }
 
         public string Nom { get; set; }
+
+        public string Image { get; set; }
 
         public string Description { get; set; }
 
@@ -27,6 +31,8 @@ namespace DAL.Models
         public decimal? PrixMin { get; set; }
 
         public decimal? PrixMax { get; set; }
+
+        public IEnumerable<TypeTheme> TypeTheme { get; set; }
 
     }
 }

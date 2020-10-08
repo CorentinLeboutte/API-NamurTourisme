@@ -27,6 +27,9 @@ namespace DAL.Models
 
         public decimal? PrixMax { get; set; }
 
+        public string Image { get; set; }
+
+
 
     }
 }

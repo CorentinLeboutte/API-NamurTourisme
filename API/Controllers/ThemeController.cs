@@ -18,11 +18,14 @@ namespace API.Controllers
     {
         private ThemeRepository _themeRepo;
         private AdresseRepository _adRepo;
+        private TypeThemeRepository _ttRepo;
 
-        public ThemeController(ThemeRepository themeRepo, AdresseRepository adRepo)
+        public ThemeController(ThemeRepository themeRepo, AdresseRepository adRepo, TypeThemeRepository ttRepo)
         {
             _themeRepo = themeRepo;
             _adRepo = adRepo;
+            _ttRepo = ttRepo;
+
         }
 
         //CREATE
@@ -67,13 +70,8 @@ namespace API.Controllers
 
         public IActionResult Get()
         {
-            List<Modeles.ThemeWithAdress> list = _themeRepo.Get().Select(x => x.DalToApiThemeWithAdress()).ToList();
-            foreach (Modeles.ThemeWithAdress theme in list)
-            {
-                theme.Adresse = _adRepo.GetById(theme.AdresseID);
-            }
-
-            return Ok(list);
+            IEnumerable<Modeles.ThemeLite> theme = _themeRepo.Get().Select(T=>T.DalToApiThemeLite());
+            return Ok(theme);
         }
 
         [HttpGet]
@@ -81,10 +79,15 @@ namespace API.Controllers
         [Route("GetById/{Id}")]
         public IActionResult GetById(/*[FromRoute]*/ int Id)
         {
-            Modeles.ThemeWithAdress theme = _themeRepo.GetById(Id).DalToApiThemeWithAdress();
+            Modeles.ThemeDetailed theme = _themeRepo.GetById(Id).DalToApiThemeDetailed();
+
             theme.Adresse = _adRepo.GetById(theme.AdresseID);
+            theme.TypeTheme = _ttRepo.GetByTheme(theme.ThemeID);
+
 
             return Ok(theme);
+
+
         }
 
 
@@ -93,10 +96,13 @@ namespace API.Controllers
         [Route("GetByTypeTheme/{Id}")]
         public IActionResult GetByTypeTheme(/*[FromRoute]*/ int Id)
         {
-            IEnumerable<Modeles.ThemeWithAdress> themes = _themeRepo.GetByTypeTheme(Id).Select(tt=>tt.DalToApiThemeWithAdress());
-            themes = themes.Select(tt=> {
+            IEnumerable<Modeles.ThemeLite> themes = _themeRepo.GetByTypeTheme(Id).Select(tt => tt.DalToApiThemeLite());
+            /*themes = themes.Select(tt =>
+            {
                 tt.Adresse = _adRepo.GetById(tt.AdresseID);
-                return tt; });
+                tt.TypeTheme = _ttRepo.GetByTheme(tt.ThemeID);
+                return tt;
+            });*/
             return Ok(themes);
         }
 
